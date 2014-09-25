@@ -10,7 +10,7 @@ This is how it works, see the:
 ```
 wget -q -O ~/.grails/settings.groovy https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_settings_old.groovy
 ``` 
-in the `before_script:` part of the `.travis.yml` example/snippet bellow; it is used to create the `~/.grails/settings.groovy` file on/in travis env before building and deploying the grails app (actual example is taken from the volunteer-portal) project.
+in the `before_script:` part of the `.travis.yml` example/snippet bellow; the config file [travis_grails_settings_old.groovy](https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_settings_old.groovy) from this repository is used to create the `~/.grails/settings.groovy` file on/in travis env before building and deploying the grails app (actual example is taken from the volunteer-portal) project.
 
 ```yaml
 language: groovy
