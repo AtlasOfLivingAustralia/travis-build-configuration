@@ -5,9 +5,11 @@
 To keep and access (shared/common) configuration files in this repository allows for easy/convenient configuration changes here in one place instead of going over 40 separate grails projects and making the same change for each of them. A typical example of this is changing/updating the maven repository URLs.
 NOTE: If some of our grails projects for some reason can't or do not want to use this shared configuration, they simply maintain their own/specific configuration in the project's github repo.
 
-This is how it works:
-
-see the: `wget -q -O ~/.grails/settings.groovy https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_settings_old.groovy` in the .travis.yml bellow used to create the `~/.grails/settings.groovy` file on travis before building and deploying the grails project (actual example is taken from the volunteer-portal) project.
+This is how it works, see the: 
+```
+wget -q -O ~/.grails/settings.groovy https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_settings_old.groovy
+``` 
+in the `before_script:` part of the `.travis.yml` example/snippet bellow; it is used to create the `~/.grails/settings.groovy` file on/in travis env before building and deploying the grails app (actual example is taken from the volunteer-portal) project.
 
 ```yaml
 language: groovy
