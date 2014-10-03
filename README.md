@@ -10,7 +10,11 @@ This is how it works, see the:
 ```
 wget -q -O ~/.grails/settings.groovy https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_settings_old.groovy
 ``` 
-in the `before_script:` part of the `.travis.yml` example/snippet bellow; the config file [travis_grails_settings_old.groovy](https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_settings_old.groovy) from this repository is used to create the `~/.grails/settings.groovy` file on/in travis env before building and deploying the grails app (actual example is taken from the volunteer-portal) project.
+in the `before_script:` part of the `.travis.yml` example/snippet bellow; the config file
+- [travis_grails_settings_old.groovy](https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_settings_old.groovy) for grails version **< 2.3**
+- [travis_grails_settings_new.groovy](https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_settings_new.groovy) for grails version **>=2.3**
+from this repository is used to create the `~/.grails/settings.groovy` file on/in travis env before building and deploying the grails app (actual example is taken from the volunteer-portal) project.
+NOTE: grails **2.4** seems to be compatible and works fine with both file formats (i tried AtlasOfLivingAustralia/taxon-overflow that uses grails **2.4.3**)
 
 ```yaml
 language: groovy
