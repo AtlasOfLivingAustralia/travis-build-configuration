@@ -16,7 +16,7 @@ in the `before_script:` part of the `.travis.yml` example/snippet bellow; the co
 
 from this repository is used to create the `~/.grails/settings.groovy` file on/in travis env before building and deploying the grails app (actual example is taken from the volunteer-portal) project.
 
-NOTE: grails **2.4** seems to be compatible and works fine with both file formats (i tried/tested  https://github.com/AtlasOfLivingAustralia/taxon-overflow that uses grails **2.4.3**)
+NOTE: grails **2.4** seems to be compatible and works fine with both file formats (i tried/tested  [taxon-overflow](https://github.com/AtlasOfLivingAustralia/taxon-overflow) that uses grails **2.4.3**)
 
 ```yaml
 language: groovy
