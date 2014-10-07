@@ -6,13 +6,7 @@
   <servers>
 
     <server>
-      <id>release</id>
-      <username>${env.TRAVIS_DEPLOY_USERNAME}</username>
-      <password>${env.TRAVIS_DEPLOY_PASSWORD}</password>
-    </server>
-
-    <server>
-      <id>snapshot</id>
+      <id>ala-repo</id>
       <username>${env.TRAVIS_DEPLOY_USERNAME}</username>
       <password>${env.TRAVIS_DEPLOY_PASSWORD}</password>
     </server>
