@@ -33,7 +33,7 @@ script:
 - grails clean && grails refresh-dependencies --non-interactive && grails prod war --non-interactive && grails prod maven-install --non-interactive
 
 after_success:
-- [ "${TRAVIS_PULL_REQUEST}" = "false" ] && grails prod maven-deploy --repository=$MAVEN_REPO --non-interactive
+- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && grails prod maven-deploy --repository=$MAVEN_REPO --non-interactive'
 
 env:
   global:
