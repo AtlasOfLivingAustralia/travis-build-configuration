@@ -41,7 +41,6 @@
 |[fieldcapture](https://github.com/AtlasOfLivingAustralia/fieldcapture)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/fieldcapture.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fieldcapture)|2.2.1|
 |[fieldcapture-hubs](https://github.com/AtlasOfLivingAustralia/fieldcapture-hubs)|N/A|N/A|
 |[fieldcapture-mobile](https://github.com/AtlasOfLivingAustralia/fieldcapture-mobile)|N/A|N/A|
-|[fieldcapture.test](https://github.com/AtlasOfLivingAustralia/fieldcapture.test)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/fieldcapture.test.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fieldcapture.test)|2.2.1|
 |[fielddata](https://github.com/AtlasOfLivingAustralia/fielddata)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/fielddata.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fielddata)|2.1.1|
 |[fielddata-android](https://github.com/AtlasOfLivingAustralia/fielddata-android)|N/A|N/A|
 |[fielddata-mobile](https://github.com/AtlasOfLivingAustralia/fielddata-mobile)|N/A|N/A|
