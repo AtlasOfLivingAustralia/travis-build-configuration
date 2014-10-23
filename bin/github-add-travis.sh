@@ -2,7 +2,9 @@
 
 # TODO: run a requirements check? check for wget, curl, travis client, etc?
 # travis client is /usr/bin/travis2.0 on my openSUSE13.1 laptop, while the mac os x uses /usr/bin/travis
-TRAVIS_CLIENT=/usr/bin/travis2.0
+# either set a link: 'sudo ln -s /usr/bin/tarvis2.0 /usr/bin/travis' or set TRAVIS_CLIENT
+#
+TRAVIS_CLIENT=/usr/bin/travis
 OVERWRITE_MODE=0
 
 
