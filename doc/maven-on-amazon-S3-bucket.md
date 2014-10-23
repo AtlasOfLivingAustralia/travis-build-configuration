@@ -1,5 +1,5 @@
 ###deploying into maven repository inside amazon S3 bucket
-(in 64 easy steps)
+(in 64 easy steps :-)
 
 ####1. amazon S3 bucket setup
 1. log into amazon S3 management console
