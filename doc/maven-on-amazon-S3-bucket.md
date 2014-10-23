@@ -1,8 +1,46 @@
-1. add `aws-wagon` to your `pom.xml` at XPath `/project/build/extensions`
-2. add amazon S3 bucket to your `pom.xml` `<distributionManagement>`
-3. TODO: copy & paste here amazon S3 bucket configuration
+###deploying into maven repository inside amazon S3 bucket
+(in 64 easy steps)
 
-example:
+####1. amazon S3 bucket setup
+1. log into amazon S3 management console
+2. create a new S3 bucket for the maven repo (in my example i created bucket `mbohun-maven`)
+3. click onto the newly created S3 bucket and then click the `Properties`
+4. in `Properties` select `Permissions` and click on `Edit bucket policy`
+5. setup the bucket policy as follows (replace with your bucket name):
+
+example amazon S3 bucket policy:
+```
+{
+	"Version": "2008-10-17",
+	"Id": "Policy1397027253868",
+	"Statement": [
+		{
+			"Sid": "Stmt1397027243665",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "*"
+			},
+			"Action": "s3:ListBucket",
+			"Resource": "arn:aws:s3:::mbohun-maven"
+		},
+		{
+			"Sid": "Stmt1397027177153",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "*"
+			},
+			"Action": "s3:GetObject",
+			"Resource": "arn:aws:s3:::mbohun-maven/*"
+		}
+	]
+}
+```
+
+####2. maven setup
+1. add `aws-wagon` to your `pom.xml` at XPath `/project/build/extensions`
+2. add the amazon S3 bucket we created previously to your `pom.xml` `<distributionManagement>`
+
+example `pom.xml`:
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
