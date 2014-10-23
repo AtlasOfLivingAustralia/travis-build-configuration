@@ -40,8 +40,8 @@ This script executes for each given repo the following steps:
 2. checks if the repo already contains `.travis.yml` file; if there is alrady `.travis.yml` file the script will skip it (see bellow for description of the `OVERWRITE_MODE` to trigger alternative behaviour.
 3. next the script attempts to identify the "type of project" (grails? or pom.xml?)
 4. if the type of project is successfully identified:
-  4.1 the script will copy in a `.travis.yml` template for that type of project
-  4.2 the script will attempt to add required maven-publisher/maven-release pluging to grails projects; or add `<distributionManagement>` to pom.xml based projects (**but only if there is no <distributionManagement> in the pom.xml file already**)
+   4.1 the script will copy in a `.travis.yml` template for that type of project
+   4.2 the script will attempt to add required maven-publisher/maven-release pluging to grails projects; or add `<distributionManagement>` to pom.xml based projects (**but only if there is no <distributionManagement> in the pom.xml file already**)
 5. next the script uses the travis client to:
   5.1 enable travis-ci.org for the repo
   5.2 encrypt and store into the `.travis.yml` all the variables from the variables file (see the example bellow for variables file format)
