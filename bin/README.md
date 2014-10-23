@@ -45,7 +45,7 @@ This script executes for each given repo the following steps:
 5. next the script uses the travis client to:
   1. enable travis-ci.org for the repo
   2. encrypt and store into the `.travis.yml` all the variables from the variables file (see the example bellow for variables file format)
-6. next the script will test if there is alrady a `README.md` file in the root of the repo, and if not it will create one (contains only the name of the repo)
+6. next the script will test if there is already a `README.md` file in the root of the repo, and if not it will create one (contains only the name of the repo)
 7. next the script checks if there is already a [travis-ci.org](https://travis-ci.org) build status badge present in the `README.md` file and if not it will add one
 8. then the changes are commited and pushed into git/github repo
 
