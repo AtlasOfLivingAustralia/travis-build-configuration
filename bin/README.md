@@ -100,3 +100,16 @@ displayed as:
 Same as `generate-github-travis-build-summary.sh` above, only this version adds extra columns to display the app (usually war, jar) version number, and the grails version.
 
 Example usage:
+```
+bash-3.2$ ./generate-github-travis-build-summary-with-grails.sh AtlasOfLivingAustralia ala-cas ala-hub ala-names-generator alerts dashboard fielddata volunteer-portal
+```
+
+|repo|version|travis build status|grails|
+|:---|:------|:------------------|:-----|
+|[ala-cas](https://github.com/AtlasOfLivingAustralia/ala-cas)|1.0-SNAPSHOT|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas)|N/A|
+|[ala-hub](https://github.com/AtlasOfLivingAustralia/ala-hub)|1.4-SNAPSHOT|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub)|2.3.11|
+|[ala-names-generator](https://github.com/AtlasOfLivingAustralia/ala-names-generator)|1.0-SNAPSHOT|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-names-generator.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-names-generator)|N/A|
+|[alerts](https://github.com/AtlasOfLivingAustralia/alerts)|0.1|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/alerts.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/alerts)|2.3.11|
+|[dashboard](https://github.com/AtlasOfLivingAustralia/dashboard)|0.1|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/dashboard.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/dashboard)|2.2.4|
+|[fielddata](https://github.com/AtlasOfLivingAustralia/fielddata)|0.1|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/fielddata.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fielddata)|2.1.1|
+|[volunteer-portal](https://github.com/AtlasOfLivingAustralia/volunteer-portal)|1.0|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal)|2.3.11|
