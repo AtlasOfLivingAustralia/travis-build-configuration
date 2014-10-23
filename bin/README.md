@@ -68,7 +68,33 @@ VARIABLE_THREE=http://ala-wonder.it.csiro.au/nexus/content/repositories/releases
 This BASH script generates a summary table (in github markdown format); each row is showing a repo/project name and the [travis-ci.org] build status badge for that project.
 
 Example usage:
-
+```
+bash-3.2$ ./generate-github-travis-build-summary.sh
+usage: ./generate-github-travis-build-summary.sh [github user/organization] repo0 repo1 repo2 ... repoN
+```
+```
+bash-3.2$ ./generate-github-travis-build-summary.sh AtlasOfLivingAustralia ala-cas ala-hub ala-name-generator alerts dashboard fielddata volunteer-portal
+|repo|travis build status|
+|:---|:------------------|
+|[ala-cas](https://github.com/AtlasOfLivingAustralia/ala-cas)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas)|
+|[ala-hub](https://github.com/AtlasOfLivingAustralia/ala-hub)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub)|
+|[ala-name-generator](https://github.com/AtlasOfLivingAustralia/ala-name-generator)|N/A|
+|[alerts](https://github.com/AtlasOfLivingAustralia/alerts)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/alerts.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/alerts)|
+|[dashboard](https://github.com/AtlasOfLivingAustralia/dashboard)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/dashboard.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/dashboard)|
+|[fielddata](https://github.com/AtlasOfLivingAustralia/fielddata)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/fielddata.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fielddata)|
+|[volunteer-portal](https://github.com/AtlasOfLivingAustralia/volunteer-portal)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal)|
+```
+displayed as:
+bash-3.2$ ./generate-github-travis-build-summary.sh AtlasOfLivingAustralia ala-cas ala-hub ala-name-generator alerts dashboard fielddata volunteer-portal
+|repo|travis build status|
+|:---|:------------------|
+|[ala-cas](https://github.com/AtlasOfLivingAustralia/ala-cas)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas)|
+|[ala-hub](https://github.com/AtlasOfLivingAustralia/ala-hub)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub)|
+|[ala-name-generator](https://github.com/AtlasOfLivingAustralia/ala-name-generator)|N/A|
+|[alerts](https://github.com/AtlasOfLivingAustralia/alerts)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/alerts.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/alerts)|
+|[dashboard](https://github.com/AtlasOfLivingAustralia/dashboard)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/dashboard.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/dashboard)|
+|[fielddata](https://github.com/AtlasOfLivingAustralia/fielddata)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/fielddata.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fielddata)|
+|[volunteer-portal](https://github.com/AtlasOfLivingAustralia/volunteer-portal)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal)|
 
 ####generate-github-travis-build-summary-with-grails.sh
 Same as `generate-github-travis-build-summary.sh` above, only this version adds extra columns to display the app (usually war, jar) version number, and the grails version.
