@@ -37,8 +37,8 @@ example amazon S3 bucket policy:
 ```
 
 ####2. maven setup
-1. add `aws-wagon` to your `pom.xml` at XPath `/project/build/extensions`
-2. add the amazon S3 bucket we created previously to your `pom.xml` `<distributionManagement>`
+1. add [aws-wagon](https://github.com/spring-projects/aws-maven) to your `pom.xml` at XPath `/project/build/extensions`
+2. add the amazon S3 bucket you created to your `pom.xml` `<distributionManagement>`
 
 example `pom.xml`:
 
