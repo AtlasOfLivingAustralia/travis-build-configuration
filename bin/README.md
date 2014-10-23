@@ -32,9 +32,9 @@ webapi
 This BASH script automatically adds [travis-ci.org](https://travis-ci.org) support to a given list of github projects. Currently supported projects are:
 - grails projects (identified by `application.properties` in the project/repo root
 - java/maven projects (identified by `pom.xml` in the project/repo root)
-- we can add more project types as we need them, for example android/iOS projects, etc.
-This script executes for each given repo the following steps:
+- *we can add more project types as we need them, for example android/iOS projects, gradle, etc.*
 
+This script executes for each given repo the following steps:
 1. clones the repo into /tmp
 2. checks if the repo already contains `.travis.yml` file; if there is alrady `.travis.yml` file the script will skip it (see bellow for description of the `OVERWRITE_MODE` to trigger alternative behaviour.
 3. next the script attempts to identify the "type of project" (grails? or pom.xml?)
