@@ -49,7 +49,7 @@ This script executes for each given repo the following steps:
 7. next the script checks if there is already a [travis-ci.org](https://travis-ci.org) build status badge present in the `README.md` file and if not it will add one
 8. then the changes are commited and pushed into git/github repo
 
-**OVERWRITE MODE**
+**OVERWRITE MODE**  
 `OVERWRITE_MODE` is for situations where you do want to replace/overwrite an existing `.travis.yml` file, for example because you want or need to (bulk) update some env variable, or some other setting for a group of repos/project (a real life example would be to update/change maven repository username and/or password for 10-20 of our projects). 
 `OVERWRITE_MODE` is disabled by default; In order to enable it open the `github-add-travis.sh` script and set `OVERWRITE_MODE=1`. Basically the main difference between normal/default mode (`OVERWRITE_MODE=0`) and `OVERWRITE_MODE=1` is that in `OVERWRITE_MODE=1` the script will **NOT** attempt to add maven-publisher/maven-release plugin-s, nor it will attempt to modify `pom.xml`.
 In `OVERWRITE_MODE` the `github-add-travis.sh` script behaves as follows:
