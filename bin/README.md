@@ -73,6 +73,7 @@ bash-3.2$ ./generate-github-travis-build-summary.sh
 usage: ./generate-github-travis-build-summary.sh [github user/organization] repo0 repo1 repo2 ... repoN
 ```
 ```
+bash-3.2$ ./generate-github-travis-build-summary.sh AtlasOfLivingAustralia ala-cas ala-hub ala-names-generator alerts dashboard fielddata volunteer-portal
 |repo|travis build status|
 |:---|:------------------|
 |[ala-cas](https://github.com/AtlasOfLivingAustralia/ala-cas)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas)|
