@@ -1,3 +1,4 @@
+```BASH
 # download and install JDK
 
 # download and install sonatype nexus
@@ -22,3 +23,4 @@ cd nexus/
 # forward incoming traffic to port 80 to sonatype nexus port 8081
 sudo iptables -t nat -A PREROUTING -p tcp -i eth0 --dport 80 -j REDIRECT --to-ports 8081
 sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+```
