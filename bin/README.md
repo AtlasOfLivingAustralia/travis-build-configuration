@@ -85,7 +85,6 @@ bash-3.2$ ./generate-github-travis-build-summary.sh AtlasOfLivingAustralia ala-c
 |[volunteer-portal](https://github.com/AtlasOfLivingAustralia/volunteer-portal)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal)|
 ```
 displayed as:
-bash-3.2$ ./generate-github-travis-build-summary.sh AtlasOfLivingAustralia ala-cas ala-hub ala-name-generator alerts dashboard fielddata volunteer-portal
 |repo|travis build status|
 |:---|:------------------|
 |[ala-cas](https://github.com/AtlasOfLivingAustralia/ala-cas)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas)|
