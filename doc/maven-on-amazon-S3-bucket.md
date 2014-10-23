@@ -41,6 +41,7 @@ example:
 </project>
 ```
 
-A fully working example of an [ALA](https://github.com/AtlasOfLivingAustralia) project ([ala-cas-client](https://github.com/mbohun/ala-cas-client)) that is:  
+A fully working example of an [ALA](https://github.com/AtlasOfLivingAustralia) project ([ala-cas-client](https://github.com/mbohun/ala-cas-client)) that is:
+
 1. build on [travis-ci.org](https://travis-ci.org/mbohun/ala-cas-client/builds/34688285)
 2. deployed from [travis-ci.org](https://travis-ci.org/mbohun/ala-cas-client/builds/34688285) into a [maven repo inside amazon S3 bucket](ttps://mbohun-maven.s3.amazonaws.com)
