@@ -73,12 +73,11 @@ bash-3.2$ ./generate-github-travis-build-summary.sh
 usage: ./generate-github-travis-build-summary.sh [github user/organization] repo0 repo1 repo2 ... repoN
 ```
 ```
-bash-3.2$ ./generate-github-travis-build-summary.sh AtlasOfLivingAustralia ala-cas ala-hub ala-name-generator alerts dashboard fielddata volunteer-portal
 |repo|travis build status|
 |:---|:------------------|
 |[ala-cas](https://github.com/AtlasOfLivingAustralia/ala-cas)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas)|
 |[ala-hub](https://github.com/AtlasOfLivingAustralia/ala-hub)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub)|
-|[ala-name-generator](https://github.com/AtlasOfLivingAustralia/ala-name-generator)|N/A|
+|[ala-names-generator](https://github.com/AtlasOfLivingAustralia/ala-names-generator)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-names-generator.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-names-generator)|
 |[alerts](https://github.com/AtlasOfLivingAustralia/alerts)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/alerts.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/alerts)|
 |[dashboard](https://github.com/AtlasOfLivingAustralia/dashboard)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/dashboard.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/dashboard)|
 |[fielddata](https://github.com/AtlasOfLivingAustralia/fielddata)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/fielddata.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fielddata)|
@@ -90,7 +89,7 @@ displayed as:
 |:---|:------------------|
 |[ala-cas](https://github.com/AtlasOfLivingAustralia/ala-cas)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas)|
 |[ala-hub](https://github.com/AtlasOfLivingAustralia/ala-hub)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub)|
-|[ala-name-generator](https://github.com/AtlasOfLivingAustralia/ala-name-generator)|N/A|
+|[ala-names-generator](https://github.com/AtlasOfLivingAustralia/ala-names-generator)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/ala-names-generator.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-names-generator)|
 |[alerts](https://github.com/AtlasOfLivingAustralia/alerts)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/alerts.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/alerts)|
 |[dashboard](https://github.com/AtlasOfLivingAustralia/dashboard)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/dashboard.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/dashboard)|
 |[fielddata](https://github.com/AtlasOfLivingAustralia/fielddata)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/fielddata.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fielddata)|
