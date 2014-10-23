@@ -64,8 +64,10 @@ In `OVERWRITE_MODE` the `github-add-travis.sh` script behaves as follows:
 6. next the script checks if there is already a [travis-ci.org](https://travis-ci.org) build status badge present in the `README.md` file and if not it will add one
 7. then the changes are commited and pushed into git/github repo
 
-Example usage:
+Example usage (**it is important that you run the script from inside the ./bin subdir so it can access the travis.yml templates in the ../templates dir!**):
 ```
+bash-3.2$ git clone git@github.com:AtlasOfLivingAustralia/travis-build-configuration.git travis-build-configuration.git
+bash-3.2$ cd travis-build-configuration.git/bin
 bash-3.2$ ./github-add-travis.sh
 usage: ./github-add-travis.sh [github-token] [github username/organization] [env var file] [repo0] [repo1] [repo2] ... [repoN]
 ```
