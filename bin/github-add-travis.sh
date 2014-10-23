@@ -7,7 +7,9 @@
 TRAVIS_CLIENT=/usr/bin/travis
 OVERWRITE_MODE=0
 
-
+# this is the dir with .travis.yml templates/boilerplates for grails project, pom.xml based maven projects, etc.
+TRAVIS_TEMPLATE_DIR=$PWD/../templates
+echo "TRAVIS_TEMPLATE_DIR:$TRAVIS_TEMPLATE_DIR"
 
 # WARNING: github is case insensitive, the travis/tavis client *IS* case sensitive
 #          i found out when: 'travis encrypt -r atlasoflivingaustralia/reponame ...' FAILED, while
@@ -63,8 +65,8 @@ do
     # TODO: make this check if is this a grails project safer/specific; grep for grails app?
     if [ -e "application.properties" ]
     then
-	# download/copy in the grails project .travis template, TODO: add support for a custom .travis.yml template/boilerplate later
-	wget -q -O .travis.yml https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/doc/travis-grails_template.yml
+	# copy in the grails project .travis template, TODO: add support for a custom .travis.yml template/boilerplate later
+	cp $TRAVIS_TEMPLATE_DIR/travis-grails_template.yml .travis.yml
 
 	if [ "$OVERWRITE_MODE" -ne "1" ]; then
 	    GRAILS_VERSION=`grep '^app\.grails\.version=' ./application.properties | sed -e 's/^app\.grails\.version=//g'`
@@ -94,8 +96,8 @@ do
 
     if [ -e "pom.xml" ]
     then
-	# download/copy in the java (pom.xml based maven project) template
-	wget -q -O .travis.yml https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/doc/travis-java_template.yml
+	# copy in the java (pom.xml based maven project) template
+	cp $TRAVIS_TEMPLATE_DIR/travis-java_template.yml .travis.yml
 
 	if [ "$OVERWRITE_MODE" -ne "1" ]; then
 	    # does the pom.xml already have/contain <distributionManagement> ?; if not then add <distributionManagement>
