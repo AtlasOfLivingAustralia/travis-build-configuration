@@ -3,7 +3,7 @@
 
 ####1. amazon S3 bucket setup
 1. log into amazon S3 management console
-2. create a new S3 bucket for the maven repo (in my example i created bucket `mbohun-maven`)
+2. create a new S3 bucket for the maven repo (in my example i created bucket named `mbohun-maven`)
 3. click onto the newly created S3 bucket and then click the `Properties`
 4. in `Properties` select `Permissions` and click on `Edit bucket policy`
 5. setup the bucket policy as follows (replace with your bucket name):
