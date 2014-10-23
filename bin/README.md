@@ -49,7 +49,20 @@ This script executes for each given repo the following steps:
 7. next the script checks if there is already a [travis-ci.org](https://travis-ci.org) build status badge present in the `README.md` file and if not it will add one
 8. then the changes are commited and pushed into git/github repo
 
-TODO: `OVERWRITE_MODE`
+**OVERWRITE MODE**
+`OVERWRITE_MODE` is for situations where you do want to replace/overwrite an existing `.travis.yml` file, for example because you want or need to (bulk) update some env variable, or some other setting for a group of repos/project (a real life example would be to update/change maven repository username and/or password for 10-20 of our projects). 
+`OVERWRITE_MODE` is disabled by default; In order to enable it open the `github-add-travis.sh` script and set `OVERWRITE_MODE=1`. Basically the main difference between normal/default mode (`OVERWRITE_MODE=0`) and `OVERWRITE_MODE=1` is that in `OVERWRITE_MODE=1` the script will **NOT** attempt to add maven-publisher/maven-release plugin-s, nor it will attempt to modify `pom.xml`.
+In `OVERWRITE_MODE` the `github-add-travis.sh` script behaves as follows:
+
+1. clones the repo into /tmp
+2. next the script attempts to identify the "type of project" (grails? or pom.xml?)
+3. if the type of project is successfully identified the script will copy in a `.travis.yml` template for that type of project **OVERWRITING** an existing `.travis.yml` if one exists
+4. next the script uses the travis client to:
+  1. enable travis-ci.org for the repo (this has no effect if the travis-ci.org was already enabled)
+  2. encrypt and store into the `.travis.yml` all the variables from the variables file (see the example bellow for variables file format)
+5. next the script will test if there is already a `README.md` file in the root of the repo, and if not it will create one (contains only the name of the repo)
+6. next the script checks if there is already a [travis-ci.org](https://travis-ci.org) build status badge present in the `README.md` file and if not it will add one
+7. then the changes are commited and pushed into git/github repo
 
 Example usage:
 ```
