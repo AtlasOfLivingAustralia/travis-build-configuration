@@ -46,7 +46,6 @@ See the [bin/](https://github.com/AtlasOfLivingAustralia/travis-build-configurat
 |[fieldcapture](https://github.com/AtlasOfLivingAustralia/fieldcapture)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/fieldcapture.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fieldcapture)|
 |[fieldcapture-hubs](https://github.com/AtlasOfLivingAustralia/fieldcapture-hubs)|N/A|
 |[fieldcapture-mobile](https://github.com/AtlasOfLivingAustralia/fieldcapture-mobile)|N/A|
-|[fieldcapture.test](https://github.com/AtlasOfLivingAustralia/fieldcapture.test)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/fieldcapture.test.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fieldcapture.test)|
 |[fielddata](https://github.com/AtlasOfLivingAustralia/fielddata)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/fielddata.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fielddata)|
 |[fielddata-android](https://github.com/AtlasOfLivingAustralia/fielddata-android)|N/A|
 |[fielddata-mobile](https://github.com/AtlasOfLivingAustralia/fielddata-mobile)|N/A|
