@@ -4,8 +4,28 @@ These are some helper scripts to automate/speedup some of the tedious and error 
 This BASH script uses [cURL](http://curl.haxx.se) to call the [github REST API](https://developer.github.com/v3) in order to retrieve all github repository names for a given github user or github organization. I wrote this script originally only as a note/demo about how to correctly paginate github REST API results (return values).
 
 Example usage:
-
-
+```
+bash-3.2$ ./githubapi-get-all-repos.sh
+usage: ./githubapi-get-all-repos.sh [github username] [your github token]
+```
+```
+bash-3.2$ ./githubapi-get-all-repos.sh AtlasOfLivingAustralia $YOUR_GITHUB_TOKEN
+ala-cas
+ala-cas-client
+ala-downloads
+ala-expert
+ala-hub
+...
+specieslist-webapp
+specimenbrowser
+taxon-overflow
+tepapa-hub
+travis-build-configuration
+tviewer
+userdetails
+volunteer-portal
+webapi
+```
 
 ####github-add-travis.sh
 This BASH script automatically adds [travis-ci.org](https://travis-ci.org) support to a given list of github projects. Currently supported projects are:
