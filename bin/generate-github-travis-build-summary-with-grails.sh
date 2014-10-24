@@ -23,6 +23,14 @@ echo "|:---|:------|:------------------|:-----|" >> $SUMMARY
 
 for repo in $GITHUB_REPOS
 do
+    # if we do have a blacklist of repos, check if repo is blacklisted and if yes skip it
+    if [ -e "blacklist.out" ]; then
+	grep -q $repo blacklist.out
+	if [ "$?" -eq 0 ]; then
+	    continue
+	fi
+    fi
+
     # default to N/A, not available, no travi-ci.org build status badge
     TRAVIS_BADGE="N/A"
 
