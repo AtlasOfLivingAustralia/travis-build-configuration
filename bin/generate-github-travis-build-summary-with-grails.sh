@@ -15,6 +15,8 @@ GITHUB_REPOS="$@"
 temp=`basename $0`
 SUMMARY=`mktemp /tmp/${temp}.XXXXXX` || exit 1
 
+MAVEN_REPO_URL='http://ala-wonder.it.csiro.au/nexus/content/repositories'
+
 # create .md table header
 echo "|repo|version|travis build status|grails|" >> $SUMMARY
 echo "|:---|:------|:------------------|:-----|" >> $SUMMARY
@@ -57,7 +59,30 @@ do
 
     fi
 
-    echo "|[$repo](https://github.com/$GITHUB_USER_ORG/$repo)|$ARTIFACT_VERSION_NUMBER|$TRAVIS_BADGE|$GRAILSVERSION|" >> $SUMMARY
+    ARTIFACT_VERSION_NUMBER_PATH="N/A"
+
+    if [ "$ARTIFACT_VERSION_NUMBER" != "" ]; then
+
+	# default to "releases"; and reset to "snapshots" if the jar/war is a -SNAPSHOT
+	SNAPSHOT_OR_RELEASE="releases"
+
+	if [[ $ARTIFACT_VERSION_NUMBER == *SNAPSHOT* ]]; then
+	    SNAPSHOT_OR_RELEASE="snapshots"
+	fi
+
+	# TODO: for now hardoced
+	ARTIFACT_GROUP_ID="au/org/ala"
+
+	# TODO: for now simple
+	ARTIFACT_ID=$repo
+
+	ARTIFACT_VERSION_NUMBER_PATH="[$ARTIFACT_VERSION_NUMBER]($MAVEN_REPO_URL/$SNAPSHOT_OR_RELEASE/$ARTIFACT_GROUP_ID/$ARTIFACT_ID/$ARTIFACT_VERSION_NUMBER)"
+
+	echo "ARTIFACT_VERSION_NUMBER: $ARTIFACT_VERSION_NUMBER; ARTIFACT_VERSION_NUMBER_PATH: $ARTIFACT_VERSION_NUMBER_PATH"
+
+    fi
+
+    echo "|[$repo](https://github.com/$GITHUB_USER_ORG/$repo)|$ARTIFACT_VERSION_NUMBER_PATH|$TRAVIS_BADGE|$GRAILSVERSION|" >> $SUMMARY
 
 done
 
