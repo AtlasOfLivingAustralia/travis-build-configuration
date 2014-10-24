@@ -31,7 +31,7 @@ do
 
     if [ "$http_status" -eq "200" ]
     then
-	TRAVIS_BADGE="[![Build Status](https://travis-ci.org/$GITHUB_USER_ORG/$repo.svg?branch=master)](https://travis-ci.org/$GITHUB_USER_ORG/$repo)"
+	TRAVIS_BADGE="[![BuildStatus](https://travis-ci.org/$GITHUB_USER_ORG/$repo.svg?branch=master)](https://travis-ci.org/$GITHUB_USER_ORG/$repo)"
     else
 	# this is not a travis project
 	continue
@@ -76,13 +76,22 @@ do
 	# TODO: for now simple
 	ARTIFACT_ID=$repo
 
-	ARTIFACT_VERSION_NUMBER_PATH="[$ARTIFACT_VERSION_NUMBER]($MAVEN_REPO_URL/$SNAPSHOT_OR_RELEASE/$ARTIFACT_GROUP_ID/$ARTIFACT_ID/$ARTIFACT_VERSION_NUMBER)"
+	ARTIFACT_VERSION_NUMBER_PATH="$MAVEN_REPO_URL/$SNAPSHOT_OR_RELEASE/$ARTIFACT_GROUP_ID/$ARTIFACT_ID/$ARTIFACT_VERSION_NUMBER"
 
-	echo "ARTIFACT_VERSION_NUMBER: $ARTIFACT_VERSION_NUMBER; ARTIFACT_VERSION_NUMBER_PATH: $ARTIFACT_VERSION_NUMBER_PATH"
+	# verify if the generated path/URL to the artifact actually does really exist, if not add a WARNING emoji/icon
+	ARTIFACT_MISSING_EMOJI=""
+
+	artifact_path=`curl -s -o /dev/null -w "%{http_code}" $ARTIFACT_VERSION_NUMBER_PATH`
+
+	if [ "$artifact_path" -ge "400" ]; then
+	    ARTIFACT_MISSING_EMOJI=":frog:"
+	fi
+
+	ARTIFACT_VERSION_NUMBER_MD="[$ARTIFACT_VERSION_NUMBER]($ARTIFACT_VERSION_NUMBER_PATH) $ARTIFACT_MISSING_EMOJI"
 
     fi
 
-    echo "|[$repo](https://github.com/$GITHUB_USER_ORG/$repo)|$ARTIFACT_VERSION_NUMBER_PATH|$TRAVIS_BADGE|$GRAILSVERSION|" >> $SUMMARY
+    echo "|[$repo](https://github.com/$GITHUB_USER_ORG/$repo)|$ARTIFACT_VERSION_NUMBER_MD|$TRAVIS_BADGE|$GRAILSVERSION|" >> $SUMMARY
 
 done
 
