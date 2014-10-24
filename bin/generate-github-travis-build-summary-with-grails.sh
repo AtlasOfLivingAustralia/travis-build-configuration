@@ -25,7 +25,7 @@ for repo in $GITHUB_REPOS
 do
     # if we do have a blacklist of repos, check if repo is blacklisted and if yes skip it
     if [ -e "blacklist.out" ]; then
-	grep -q $repo blacklist.out
+	grep -q -w $repo blacklist.out
 	if [ "$?" -eq 0 ]; then
 	    continue
 	fi
