@@ -74,8 +74,12 @@ do
 	# TODO: for now hardoced
 	ARTIFACT_GROUP_ID="au/org/ala"
 
-	# TODO: for now simple
-	ARTIFACT_ID=$repo
+	# TMP HACK-AROUND: try to lookup the artifact name in a (repository to war name) lookup
+	#                  table, if no match is returned use the repo name for war name
+	ARTIFACT_ID=`grep $repo ./repo2war-name.lookup | sed -e "s/$repo.*://g"`
+	if [ "$ARTIFACT_ID" == "" ]; then
+	    ARTIFACT_ID=$repo
+	fi
 
 	ARTIFACT_VERSION_NUMBER_PATH="$MAVEN_REPO_URL/$SNAPSHOT_OR_RELEASE/$ARTIFACT_GROUP_ID/$ARTIFACT_ID/$ARTIFACT_VERSION_NUMBER"
 

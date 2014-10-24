@@ -1,0 +1,11 @@
+ala-logger-service         :logger-service
+analysis-service           :ala-spatial
+bhl-demo-app               :bhl-ftindex-demo
+bhl-ftindexer      groupId :bhl-indexer
+fieldguide                 :ala-fieldguide
+image-loader       groupid :image-uploader
+image-service              :ala-images
+phylolink                  :PhyloLink
+sandbox                    :datacheck
+sensitive-species          :sds
+spatial-logger             :actions
