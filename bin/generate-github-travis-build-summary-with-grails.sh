@@ -82,11 +82,16 @@ do
 	# TODO: for now hardoced
 	ARTIFACT_GROUP_ID="au/org/ala"
 
+	# default is artifact (war name) is the same as the repo name
+	ARTIFACT_ID=$repo
+
 	# TMP HACK-AROUND: try to lookup the artifact name in a (repository to war name) lookup
-	#                  table, if no match is returned use the repo name for war name
-	ARTIFACT_ID=`grep $repo ./repo2war-name.lookup | sed -e "s/$repo.*://g"`
-	if [ "$ARTIFACT_ID" == "" ]; then
-	    ARTIFACT_ID=$repo
+	#                  table, if a match is found use it instead of the "default" repo name
+	if [ -e "repo2war-name.lookup" ]; then
+	    lookup_name=`grep $repo repo2war-name.lookup | sed -e "s/$repo.*://g"`
+	    if [ "$lookup_name" != "" ]; then
+		ARTIFACT_ID=$lookup_name
+	    fi
 	fi
 
 	ARTIFACT_VERSION_NUMBER_PATH="$MAVEN_REPO_URL/$SNAPSHOT_OR_RELEASE/$ARTIFACT_GROUP_ID/$ARTIFACT_ID/$ARTIFACT_VERSION_NUMBER"
