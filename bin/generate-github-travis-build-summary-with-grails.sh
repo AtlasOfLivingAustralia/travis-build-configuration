@@ -114,4 +114,16 @@ do
 
 done
 
+# dump the repo2war-name.lookup lookup table used to generate the summary
+echo "" >> $SUMMARY
+echo "|repo name |war name |" >> $SUMMARY
+echo "|:---------|:--------|" >> $SUMMARY
+
+while read line; do
+    repo_name=`echo $line | sed -e "s/ .*$//g"`
+    war_name=`echo $line | sed -e "s/^.*://g"`
+    echo "|$repo_name|$war_name|" >> $SUMMARY
+
+done < repo2war-name.lookup
+
 cat $SUMMARY
