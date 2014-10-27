@@ -8,7 +8,7 @@ See the [bin/](https://github.com/AtlasOfLivingAustralia/travis-build-configurat
 |[ala-cas](https://github.com/AtlasOfLivingAustralia/ala-cas)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas)|
 |[ala-cas-client](https://github.com/AtlasOfLivingAustralia/ala-cas-client)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas-client.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas-client)|
 |[ala-downloads](https://github.com/AtlasOfLivingAustralia/ala-downloads)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-downloads.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-downloads)|
-|[ala-expert](https://github.com/AtlasOfLivingAustralia/ala-expert)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-expert.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-expert)|
+|[expert](https://github.com/AtlasOfLivingAustralia/expert)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/expert.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/expert)|
 |[ala-hub](https://github.com/AtlasOfLivingAustralia/ala-hub)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub)|
 |[ala-install](https://github.com/AtlasOfLivingAustralia/ala-install)|N/A|
 |[ala-logger](https://github.com/AtlasOfLivingAustralia/ala-logger)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-logger.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-logger)|
