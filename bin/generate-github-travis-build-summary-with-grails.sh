@@ -17,7 +17,7 @@ GITHUB_REPOS="$@"
 temp=`basename $0`
 SUMMARY=`mktemp /tmp/${temp}.XXXXXX` || exit 1
 
-MAVEN_REPO_URL='http://ala-wonder.it.csiro.au/nexus/content/repositories'
+MAVEN_REPO_URL='http://nexus.ala.org.au/content/repositories'
 
 # create .md table header
 echo "\`generated on:\` **$TIMESTAMP_START** @ **`hostname`**" >> $SUMMARY
