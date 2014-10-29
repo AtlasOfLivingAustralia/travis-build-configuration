@@ -19,7 +19,7 @@ before_install:
 - gvm install grails $GRAILS_VERSION || true
 
 before_script:
-- GRAILS_VERSION_NUMBER=`echo $GRAILS_VERSION | sed -e 's/\.[0-9]*$//g' -e 's/\.//g'`
+- GRAILS_VERSION_NUMBER=`echo $GRAILS_VERSION | sed -e 's/\.[0-9]*$//g' -e 's/\.//g' | tr -d "\r"`
 - echo "GRAILS_VERSION_NUMBER:$GRAILS_VERSION_NUMBER"
 - GRAILS_SETTINGS_FILE="travis_grails_settings_new.groovy"
 - if [ "$GRAILS_VERSION_NUMBER" -lt "23" ]; then GRAILS_SETTINGS_FILE="travis_grails_settings_old.groovy"; fi;
