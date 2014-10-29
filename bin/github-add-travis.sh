@@ -69,7 +69,7 @@ do
 	cp $TRAVIS_TEMPLATE_DIR/travis-grails_template.yml .travis.yml
 
 	if [ "$OVERWRITE_MODE" -ne "1" ]; then
-	    GRAILS_VERSION=`grep '^app\.grails\.version=' ./application.properties | sed -e 's/^app\.grails\.version=//g'`
+	    GRAILS_VERSION=`grep '^app\.grails\.version=' ./application.properties | sed -e 's/^app\.grails\.version=//g' | tr -d "\r"`
 	    echo "GRAILS_VERSION:$GRAILS_VERSION"
 
 	    # GRAILS_VERSION_NUMBER:             2.3.11       => 2.3              => 23
