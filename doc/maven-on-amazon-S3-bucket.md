@@ -78,6 +78,7 @@ example `pom.xml`:
     </distributionManagement>
 </project>
 ```
+3. use your amazon S3 bucket "Security Credentials" ("Access Key ID" for username, "Secret Access Key" for password) to upload artifacts to your maven repo inside an Amazon S3 bucket. 
 
 A fully working example of an [ALA](https://github.com/AtlasOfLivingAustralia) project ([ala-cas-client](https://github.com/mbohun/ala-cas-client)) that is:
 
