@@ -5,4 +5,3 @@ fieldguide                 :ala-fieldguide
 image-loader       groupid :image-uploader
 image-service              :ala-images
 sandbox                    :datacheck
-sensitive-species          :sds
