@@ -20,8 +20,8 @@ SUMMARY=`mktemp /tmp/${temp}.XXXXXX` || exit 1
 MAVEN_REPO_URL='http://nexus.ala.org.au/content/repositories'
 
 # create .md table header
-echo "\`generated on:\` **$TIMESTAMP_START**" >> $SUMMARY
-echo "@**`hostname`**" >> $SUMMARY
+echo "\`generated on:\` **$TIMESTAMP_START**  " >> $SUMMARY
+echo " @`hostname`" >> $SUMMARY
 echo "" >> $SUMMARY
 echo "|repo|version|travis build status|grails|" >> $SUMMARY
 echo "|:---|:------|:------------------|:-----|" >> $SUMMARY
