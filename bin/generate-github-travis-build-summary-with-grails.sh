@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TIMESTAMP_START=`date "+%Y-%m-%d %H:%M:%S"`
+TIMESTAMP_START=`TZ='Australia/Canberra' date "+%Y-%m-%d %H:%M:%S"`
 
 # we need at least two args: gihub user/organization AND at least one repo name
 if [ -z "$1" ] || [ -z "$2" ]; then
