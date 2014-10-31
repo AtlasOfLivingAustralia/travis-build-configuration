@@ -36,6 +36,9 @@ do
 	fi
     fi
 
+    # TODO: for now hardoced, grails plugin projects re-set this to "org/grails/plugins"
+    ARTIFACT_GROUP_ID="au/org/ala"
+
     # default to N/A, not available, no travi-ci.org build status badge
     TRAVIS_BADGE="N/A"
 
@@ -67,6 +70,20 @@ do
 
 	ARTIFACT_VERSION_NUMBER=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/application.properties | grep '^\s*app.version' | sed -e 's/^\s*app\.version=//g' | tr -d "\r"`
 
+	# OK this repo HAS application.properties BUT we failed to find/extract app.version from it; so let's check if this is a grails plugin
+	if [ "$ARTIFACT_VERSION_NUMBER" == "" ]; then
+	    # first build the grails plugin file name: "ala-web-theme" => "AlaWebThemeGrailsPlugin.groovy"
+	    GRAILS_PLUGIN_NAME=`(name=""; IFS='-'; for w in $repo; do name+="${w^}"; done; echo "${name}GrailsPlugin.groovy")`
+
+	    grails_plugin=`curl -s -o /dev/null -w "%{http_code}" https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/$GRAILS_PLUGIN_NAME`
+
+	    if [ "$grails_plugin" -eq "200" ]; then
+		ARTIFACT_VERSION_NUMBER=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/$GRAILS_PLUGIN_NAME | grep '^\s*def\s*version' | sed -e 's/^.*=\s*"//g' | sed -e 's/".*$//g'`
+
+		ARTIFACT_GROUP_ID="org/grails/plugins"
+	    fi
+	fi
+
     elif [ "$pom_xml" -eq "200" ]; then
 	ARTIFACT_VERSION_NUMBER=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/pom.xml | grep -m 1 '^\s*<version>' | sed -e 's/^.*<version>//g' -e 's/<\/.*$//g' | tr -d "\r"`
 
@@ -83,9 +100,6 @@ do
 	if [[ $ARTIFACT_VERSION_NUMBER == *SNAPSHOT* ]]; then
 	    SNAPSHOT_OR_RELEASE="snapshots"
 	fi
-
-	# TODO: for now hardoced
-	ARTIFACT_GROUP_ID="au/org/ala"
 
 	# default is artifact (war name) is the same as the repo name
 	ARTIFACT_ID=$repo
