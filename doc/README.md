@@ -139,7 +139,7 @@ These projects needs to be 'mavenized' first in order to become the same as `gra
 |[fieldcapture](https://github.com/AtlasOfLivingAustralia/fieldcapture)              |Grails 2.2.1 |`clean "prod war target/fieldcapture.war"`                     |`jenkins-scp`|
 |[fieldcapture-hubs](https://github.com/AtlasOfLivingAustralia/fieldcapture-hubs)    |Grails 2.4.3 |`clean refresh-dependencies "prod war target/fieldcapture-hub.war"`       |`jenkins-scp`|
 |[fieldcapture-mobile](https://github.com/AtlasOfLivingAustralia/fieldcapture-mobile)|android, ios |`TODO` android/gradle?                                                   |`gradle?`    |
-|[fielddata](https://github.com/AtlasOfLivingAustralia/fielddata)                    |Grails 2.1.1 |`"prod war target/fielddata.war"`                        |`jenkins-scp`|
+|[fielddata](https://github.com/AtlasOfLivingAustralia/fielddata)                    |Grails 2.1.1 |`"prod war target/fielddata.war"`                        |~~jenkins-scp~~ `maven`|
 |[fielddata-android](https://github.com/AtlasOfLivingAustralia/fielddata-android)    |android      |`TODO` android/gradle?                                                   |`gradle`?|
 |[fielddata-mobile](https://github.com/AtlasOfLivingAustralia/fielddata-mobile)      |android, ios |`TODO` |?|
 |[fielddata-proxy](https://github.com/AtlasOfLivingAustralia/fielddata-proxy)        |Grails 2.2.0 | ? |`grails-mvn`|
@@ -161,11 +161,11 @@ These projects needs to be 'mavenized' first in order to become the same as `gra
 |[sandbox](https://github.com/AtlasOfLivingAustralia/sandbox)                        |Grails 2.2.4 |`"prod war target/datacheck.war"`                              |`jenkins-scp`|
 |[sds-webapp2](https://github.com/AtlasOfLivingAustralia/sds-webapp2)                |Grails 2.3.7 |`"prod war  target/sds-webapp2.war"`                           |`jenkins-scp`|
 |[sensitive-species](https://github.com/AtlasOfLivingAustralia/sensitive-species)    |Maven 3.2.1  |`clean install -DskipTests=true`                               |`jenkins-mvn`|
-|[sightings](https://github.com/AtlasOfLivingAustralia/sightings)                    |Grails 2.1.1 |`"prod war target/sightings.war"`                              |`jenkins-scp`|
+|[sightings](https://github.com/AtlasOfLivingAustralia/sightings)                    |Grails 2.1.1 |`"prod war target/sightings.war"`                              |~~jenkins-scp~~ `maven`|
 |[spatial-logger](https://github.com/AtlasOfLivingAustralia/spatial-logger)          |Maven 3.2.1  | ? |`maven`?|
 |[spatial-portal](https://github.com/AtlasOfLivingAustralia/spatial-portal)          |Maven 3.2.1  |`clean install`                                                |`jenkins-mvn`|
 |[specieslist-webapp](https://github.com/AtlasOfLivingAustralia/specieslist-webapp)  |Grails 2.3.8 |`refresh-dependencies "prod maven-install" "prod maven-deploy"`|`grails-mvn` |
-|[specimenbrowser](https://github.com/AtlasOfLivingAustralia/specimenbrowser)        |Grails 2.2.2 | ? |`jenkins-scp`?|
+|[specimenbrowser](https://github.com/AtlasOfLivingAustralia/specimenbrowser)        |Grails 2.2.2 | ? |~~jenkins-scp~~ `maven`|
 |[tepapa-hub](https://github.com/AtlasOfLivingAustralia/tepapa-hub)                  |Grails 2.3.7 |`refresh-dependencies "prod maven-install" "prod maven-deploy"`|`grails-mvn` |
 |[tviewer](https://github.com/AtlasOfLivingAustralia/tviewer)                        |Grails 2.1.2 |`"prod war target/tviewer.war"`                                |`jenkins-scp` |
 |[userdetails](https://github.com/AtlasOfLivingAustralia/userdetails)                |Grails 2.2.4 |`"prod war target/userdetails.war"`                            |`jenkins-scp` |
