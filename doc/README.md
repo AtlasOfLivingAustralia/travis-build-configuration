@@ -1,3 +1,12 @@
+##MOST RECENT UPDATE:
+the following grails projects do **NOT** use grails maven publisher/release plugin, but use maven directly in order to deploy the build artifact into the maven repository:
+- bie-webapp2
+- fielddata
+- sightings
+- specimenbrowser
+
+---
+
 ##Intro
 The [ALA](https://github.com/AtlasOfLivingAustralia) applications/components can be divided into 3 diff groups/types according to the build system they use:
 
