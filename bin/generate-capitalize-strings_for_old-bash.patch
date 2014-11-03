@@ -1,0 +1,19 @@
+diff --git a/bin/generate-github-travis-build-summary-with-grails.sh b/bin/generate-github-travis-build-summary-with-grails.sh
+index ddd4372..9e9e759 100755
+--- a/bin/generate-github-travis-build-summary-with-grails.sh
++++ b/bin/generate-github-travis-build-summary-with-grails.sh
+@@ -73,12 +73,12 @@ do
+ 	# OK this repo HAS application.properties BUT we failed to find/extract app.version from it; so let's check if this is a grails plugin
+ 	if [ "$ARTIFACT_VERSION_NUMBER" == "" ]; then
+ 	    # first build the grails plugin file name: "ala-web-theme" => "AlaWebThemeGrailsPlugin.groovy"
+-	    GRAILS_PLUGIN_NAME=`(name=""; IFS='-'; for w in $repo; do name+="${w^}"; done; echo "${name}GrailsPlugin.groovy")`
++	    GRAILS_PLUGIN_NAME=`(name=""; IFS='-'; for word in $repo; do name+=$(tr '[:lower:]' '[:upper:]' <<< ${word:0:1})${word:1}; done; echo "${name}GrailsPlugin.groovy")`
+ 
+ 	    grails_plugin=`curl -s -o /dev/null -w "%{http_code}" https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/$GRAILS_PLUGIN_NAME`
+ 
+ 	    if [ "$grails_plugin" -eq "200" ]; then
+-		ARTIFACT_VERSION_NUMBER=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/$GRAILS_PLUGIN_NAME | grep '^\s*def\s*version' | sed -e 's/^.*=\s*"//g' | sed -e 's/".*$//g'`
++		ARTIFACT_VERSION_NUMBER=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/$GRAILS_PLUGIN_NAME | grep '^\s*def\s*version' | sed -e 's/^.*= *"//g' | sed -e 's/".*$//g'`
+ 
+ 		ARTIFACT_GROUP_ID="org/grails/plugins"
+ 	    fi
