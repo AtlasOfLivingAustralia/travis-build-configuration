@@ -128,7 +128,7 @@ These projects needs to be 'mavenized' first in order to become the same as `gra
 |[bhl-solr-plugin](https://github.com/AtlasOfLivingAustralia/bhl-solr-plugin)        |Maven 3.2.1  | ? | `maven` |
 |[bie-profile](https://github.com/AtlasOfLivingAustralia/bie-profile)                |Maven 3.2.1  |`clean install -DskipTests=true`                               |`jenkins-mvn`|
 |[bie-service](https://github.com/AtlasOfLivingAustralia/bie-service)                |Maven 3.2.1  |`clean install -DskipTests=true`                               |`jenkins-mvn`|
-|[bie-webapp2](https://github.com/AtlasOfLivingAustralia/bie-webapp2)                |Grails 2.3.11|`"prod war target/bie-webapp2.war"`BROKEN with grails publisher/release plugin, pom.xml creation fails|`jenkins-scp`|
+|[bie-webapp2](https://github.com/AtlasOfLivingAustralia/bie-webapp2)                |Grails 2.3.11|`"prod war target/bie-webapp2.war"` ~~BROKEN with grails publisher/release plugin, pom.xml creation fails~~| ~~jenkins-scp~~ `maven`|
 |[biocache-hubs](https://github.com/AtlasOfLivingAustralia/biocache-hubs)            |Grails 2.3.8 |`clean refresh-dependencies "prod maven-deploy" "prod maven-install"`|`grails-mvn`|
 |[biocache-jms](https://github.com/AtlasOfLivingAustralia/biocache-jms)              |Maven 3.2.1  |`clean install -DskipTests=true`                               |`jenkins-mvn`|  
 |[biocache-service](https://github.com/AtlasOfLivingAustralia/biocache-service)      |Maven 3.2.1  |`-e clean deploy`                                              |`maven`      |
