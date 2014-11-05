@@ -141,4 +141,8 @@ while read line; do
 
 done < repo2war-name.lookup
 
+echo "" >> $SUMMARY
+echo "[add/remove/edit mapping table](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/edit/master/bin/repo2war-name.lookup)" >> $SUMMARY
+echo "" >> $SUMMARY
+
 cat $SUMMARY
