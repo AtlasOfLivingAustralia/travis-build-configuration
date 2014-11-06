@@ -72,7 +72,7 @@ See the [bin/](https://github.com/AtlasOfLivingAustralia/travis-build-configurat
 |[regions](https://github.com/AtlasOfLivingAustralia/regions)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/regions.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/regions)|
 |[sandbox](https://github.com/AtlasOfLivingAustralia/sandbox)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/sandbox.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/sandbox)|
 |[sds-webapp2](https://github.com/AtlasOfLivingAustralia/sds-webapp2)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/sds-webapp2.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/sds-webapp2)|
-|[sensitive-species](https://github.com/AtlasOfLivingAustralia/sensitive-species)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/sensitive-species.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/sensitive-species)|
+|[sds](https://github.com/AtlasOfLivingAustralia/sds)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/sds.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/sds)|
 |[sightings](https://github.com/AtlasOfLivingAustralia/sightings)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/sightings.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/sightings)|
 |[spatial-database](https://github.com/AtlasOfLivingAustralia/spatial-database)|N/A|
 |[spatial-logger](https://github.com/AtlasOfLivingAustralia/spatial-logger)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/spatial-logger.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/spatial-logger)|
