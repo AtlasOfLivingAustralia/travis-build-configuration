@@ -10,12 +10,12 @@
 
   <distributionManagement>
     <repository>
-      <id>ala-repo</id>
+      <id>remote-repository</id>
       <name>Internal Releases</name>
       <url>http://nexus.ala.org.au/content/repositories/releases/</url>
     </repository>
     <snapshotRepository>
-      <id>ala-repo</id>
+      <id>remote-repository</id>
       <name>Internal Releases</name>
       <url>http://nexus.ala.org.au/content/repositories/snapshots/</url>
     </snapshotRepository>
