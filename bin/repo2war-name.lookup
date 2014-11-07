@@ -1,7 +1,6 @@
 analysis-service           :ala-spatial
 bhl-demo-app               :bhl-ftindex-demo
 bhl-ftindexer      groupId :bhl-indexer
-fieldguide                 :ala-fieldguide
 image-loader       groupid :image-uploader
 image-service              :ala-images
 spatial-logger             :actions
