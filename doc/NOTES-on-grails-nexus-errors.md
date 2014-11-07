@@ -26,7 +26,7 @@ Have you specified a configured repository to deploy to (--repository argument) 
 Maven deploy complete.
 ``` 
 * reported error: Error deploying artifact ... HTTP return code 401
-* real problem: dashboard is an older grails app (grails 2.2.4), and the grails (publisher/release) maven plugin prior to grails 2.3 (**< 2.3**)requires the repository info to be in format:
+* real problem: dashboard is an older grails app (grails 2.2.4), and the grails (publisher/release) maven plugin prior to grails 2.3 (**< 2.3**) requires the `~/.grails/settings.groovy` repo info to be in format:
 ```groovy
 grails.project.dependency.distribution = {
   remoteRepository(id:"nectar-nexus-repo-snapshot", url:"http://130.56.249.242/nexus/content/repositories/snapshots") {
