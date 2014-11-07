@@ -50,7 +50,7 @@ sudo update-rc.d nexus defaults
 
 # sonatype nexus runs by default in jetty container and listens on (unprivileged) port 8081, normally you want to make your
 # maven repo accessible over port 80, you can either install apache to listen on port 80 and proxy to jetty/sonatype nexus on
-# port 8081, or simply forward incoming connection to port 80 to port 8081. to do this on ubuntu i added the port forwarding
+# port 8081, or simply forward (with iptables) incoming connections to port 80 to port 8081. to do this on ubuntu i added the port forwarding
 # to /etc/rc.local:
 hor22n@ala-wonder:~$ sudo cat /etc/rc.local
 #!/bin/sh -e
