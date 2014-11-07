@@ -1,5 +1,5 @@
 ```BASH
-# download and install JDK
+# download and install JDK (sonatype nexus is a java app running in java jetty webcontainer)
 
 # download and install sonatype nexus
 wget -c http://www.sonatype.org/downloads/nexus-latest-bundle.tar.gz
@@ -10,12 +10,17 @@ sudo ln -s nexus-2.9.1-02 nexus
 
 # the sonatype nexus howto seems to be incorrect (resp. incomplete), you need a non-root user that can run nexus in /usr/local
 sudo adduser --home /usr/local/nexus --disabled-login --disabled-password nexus
-chown -R nexususer:nexus nexus
-chown -R nexususer:nexus sonatype-work
+chown -R nexus:nexus nexus
+chown -R nexus:nexus sonatype-work
+
+# WARNING: make sure the directory sonatype-work is on a partitions with enough free space for your maven repository!
 
 # verify if we are up and running (for now in manual mode)
+sudo su nexus
 cd nexus/
-./bin/nexus start #TODO: verify if this is correct, or if some chmod on /usr/local/nexus is REQUIRED
+./bin/nexus start
+./bin/nexus status
+./bin/nexus stop
 
 # make sonatype nexus start automatically on the system startup, this is distro specific, here is what i did for ubuntu:
 hor22n@ala-wonder:~$ cat /etc/*rel*     
