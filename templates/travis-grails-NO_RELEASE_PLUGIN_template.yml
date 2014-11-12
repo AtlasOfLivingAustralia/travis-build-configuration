@@ -1,9 +1,12 @@
 language: groovy
+
 jdk:
 - oraclejdk7
+
 branches:
   only:
   - master
+
 before_install:
 - rm -rf ~/.gvm
 - curl -s get.gvmtool.net > ~/install_gvm.sh
@@ -11,10 +14,10 @@ before_install:
 - ~/install_gvm.sh
 - echo "gvm_auto_answer=true" > ~/.gvm/etc/config
 - source ~/.gvm/bin/gvm-init.sh
-- GRAILS_VERSION=`grep '^\s*app.grails.version' application.properties | sed -e 's/^\s*app\.grails\.version=//g'
-  | tr -d "\r"`
+- GRAILS_VERSION=`grep '^\s*app.grails.version' application.properties | sed -e 's/^\s*app\.grails\.version=//g' | tr -d "\r"`
 - echo "GRAILS_VERSION:$GRAILS_VERSION"
 - gvm install grails $GRAILS_VERSION || true
+
 before_script:
 - wget -q https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/ala_common.sh
 - chmod +x ala_common.sh
@@ -25,13 +28,16 @@ before_script:
 
 - MAVEN_REPO_ID=$ALA_MAVEN_REPO_ID
 - GROUP_ID=$ALA_MAVEN_GROUP_ID
-
-- RELEASE_OR_SNAPSHOT="snapshots"
-- grep '^\s*app\.version=' ./application.properties | grep -q "\-SNAPSHOT"; if [ "$?" = "1" ]; then RELEASE_OR_SNAPSHOT="releases"; fi;
-- MAVEN_REPO_URL=$ALA_MAVEN_REPO_URL/$RELEASE_OR_SNAPSHOT
-
 - APP_NAME=`grep "^\s*app\.name=" ./application.properties | sed -e "s/^\s*app\.name=//g" | tr -d "\r"`
+- RELEASE_OR_SNAPSHOT="snapshots"
+- PACKAGING="war"
+- FILE_PREFIX="target/"
+
 - APP_VERSION=`grep "^\s*app\.version=" ./application.properties | sed -e "s/^\s*app\.version=//g" | tr -d "\r"`
+- if [ "$APP_VERSION" == "" ]; then APP_VERSION=`grep '^\s*def\s*version' ./*GrailsPlugin.groovy | sed -e 's/^.*= *"//g' | sed -e 's/".*$//g' | tr -d "\r"`; GROUP_ID="org.grails.plugins"; PACKAGING="zip"; FILE_PREFIX="grails-"; fi;
+
+- echo $APP_VERSION | grep -q "\-SNAPSHOT"; if [ "$?" = "1" ]; then RELEASE_OR_SNAPSHOT="releases"; fi;
+- MAVEN_REPO_URL=$ALA_MAVEN_REPO_URL/$RELEASE_OR_SNAPSHOT
 
 - echo "ALA_MAVEN_REPO_URL:$ALA_MAVEN_REPO_URL"
 - echo "ALA_MAVEN_REPO_ID:$ALA_MAVEN_REPO_ID"
@@ -42,11 +48,12 @@ before_script:
 - echo "GROUP_ID:$GROUP_ID"
 - echo "APP_NAME:$APP_NAME"
 - echo "APP_VERSION:$APP_VERSION"
+- echo "PACKAGING:$PACKAGING"
 
 script:
 - grails clean && grails refresh-dependencies --non-interactive && grails prod war --non-interactive
 
-after_success: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && mvn -e deploy:deploy-file -DartifactId=$APP_NAME -DgroupId=$GROUP_ID -Dpackaging=war -Dversion=$APP_VERSION -Dfile=target/$APP_NAME-$APP_VERSION.war -DrepositoryId=$MAVEN_REPO_ID -Durl=$MAVEN_REPO_URL'
+after_success: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && mvn -e deploy:deploy-file -DartifactId=$APP_NAME -DgroupId=$GROUP_ID -Dpackaging=$PACKAGING -Dversion=$APP_VERSION -Dfile=${FILE_PREFIX}${APP_NAME}-${APP_VERSION}.${PACKAGING} -DrepositoryId=$MAVEN_REPO_ID -Durl=$MAVEN_REPO_URL'
 
 env:
   global:
