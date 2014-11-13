@@ -70,10 +70,12 @@ do
 
 	ARTIFACT_VERSION_NUMBER=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/application.properties | grep '^\s*app.version' | sed -e 's/^\s*app\.version=//g' | tr -d "\r"`
 
+	GRAILS_APP_NAME=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/application.properties | grep '^\s*app.name' | sed -e 's/^\s*app\.name=//g' | tr -d "\r"`
+
 	# OK this repo HAS application.properties BUT we failed to find/extract app.version from it; so let's check if this is a grails plugin
 	if [ "$ARTIFACT_VERSION_NUMBER" == "" ]; then
 	    # first build the grails plugin file name: "ala-web-theme" => "AlaWebThemeGrailsPlugin.groovy"
-	    GRAILS_PLUGIN_NAME=`(name=""; IFS='-'; for word in $repo; do name+=$(tr '[:lower:]' '[:upper:]' <<< ${word:0:1})${word:1}; done; echo "${name}GrailsPlugin.groovy")`
+	    GRAILS_PLUGIN_NAME=`(name=""; IFS='-'; for word in $GRAILS_APP_NAME; do name+=$(tr '[:lower:]' '[:upper:]' <<< ${word:0:1})${word:1}; done; echo "${name}GrailsPlugin.groovy")`
 
 	    grails_plugin=`curl -s -o /dev/null -w "%{http_code}" https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/$GRAILS_PLUGIN_NAME`
 
