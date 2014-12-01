@@ -87,7 +87,17 @@ do
 	fi
 
     elif [ "$pom_xml" -eq "200" ]; then
-	ARTIFACT_VERSION_NUMBER=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/pom.xml | grep -m 1 '^\s*<version>' | sed -e 's/^.*<version>//g' -e 's/<\/.*$//g' | tr -d "\r"`
+	# TODO: this is an ugly hack; assuming that <parent> element (if present) in pom.xml is included BEFORE anything else; in this case we want to extract
+	# //project/version NOT //project/parent/version; if we found </parent> we are assuming the artifact version is the next <version> bellow;
+	# This should really be done properly with some XML/XPath aware tool.
+
+	start_from_line=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/pom.xml | grep -n "</parent>" | sed "s/:.*$//g"`
+	if [ "$start_from_line" == "" ]; then
+	    # if we did not find </parent> element, we are starting from the top/beggining of the file, line 1
+	    start_from_line=1
+	fi
+
+	ARTIFACT_VERSION_NUMBER=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/pom.xml | sed -n "${start_from_line},$ p" |  grep -m 1 '^\s*<version>' | sed -e 's/^.*<version>//g' -e 's/<\/.*$//g' | tr -d "\r"`
 
     fi
 
