@@ -21,7 +21,8 @@ do
     if [ "$application_properties" -eq "200" ]; then
 	TEST=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/grails-app/conf/BuildConfig.groovy | grep -n "maven\.ala\.org\.au"`
         if [ "$?" = "0" ]; then
-	    echo "$GITHUB_USER_ORG/$repo" > SUMMARY
+	    GRAILSVERSION=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/application.properties | grep '^\s*app.grails.version' | sed -e 's/^\s*app\.grails\.version=//g' | tr -d "\r"`
+	    echo "$GITHUB_USER_ORG/$repo (grails:$GRAILSVERSION)" > SUMMARY
 	    echo "$TEST"                 >> SUMMARY
 	    echo ""                      >> SUMMARY
 	    cat SUMMARY
@@ -32,7 +33,7 @@ do
     if [ "$pom_xml" -eq "200" ]; then
 	TEST=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/pom.xml | grep -n "maven\.ala\.org\.au"`
         if [ "$?" = "0" ]; then
-	    echo "$GITHUB_USER_ORG/$repo" > SUMMARY
+	    echo "$GITHUB_USER_ORG/$repo (pom.xml)" > SUMMARY
 	    echo "$TEST"                 >> SUMMARY
 	    echo ""                      >> SUMMARY
 	    cat SUMMARY
