@@ -17,7 +17,7 @@
     <mirror>
       <!--This sends everything else to /public -->
       <id>nexus</id>
-      <mirrorOf>*,!ala-repo-snapshot</mirrorOf>
+      <mirrorOf>*,!ala-repo-snapshot,!ala-repo-release</mirrorOf>
       <url>http://nexus.ala.org.au/content/groups/public/</url>
     </mirror>
   </mirrors>
