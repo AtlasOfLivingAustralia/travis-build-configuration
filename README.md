@@ -3,86 +3,58 @@ This repo contains all the information, configuration, and scripts required/used
 See the [doc/](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/tree/master/doc) subdir for information.  
 See the [bin/](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/tree/master/bin) subdir for helper scripts and even more information.
 
-|repo|travis build status|
-|:---|:------------------|
-|[ala-cas](https://github.com/AtlasOfLivingAustralia/ala-cas)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas)|
-|[ala-cas-client](https://github.com/AtlasOfLivingAustralia/ala-cas-client)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas-client.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-cas-client)|
-|[ala-downloads](https://github.com/AtlasOfLivingAustralia/ala-downloads)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-downloads.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-downloads)|
-|[ala-hub](https://github.com/AtlasOfLivingAustralia/ala-hub)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub)|
-|[ala-install](https://github.com/AtlasOfLivingAustralia/ala-install)|N/A|
-|[ala-logger](https://github.com/AtlasOfLivingAustralia/ala-logger)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-logger.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-logger)|
-|[logger-service](https://github.com/AtlasOfLivingAustralia/logger-service)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/logger-service.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/logger-service)|
-|[ala-name-matching](https://github.com/AtlasOfLivingAustralia/ala-name-matching)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-name-matching.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-name-matching)|
-|[ala-names-generator](https://github.com/AtlasOfLivingAustralia/ala-names-generator)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-names-generator.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-names-generator)|
-|[ala-soils2sat](https://github.com/AtlasOfLivingAustralia/ala-soils2sat)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-soils2sat.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-soils2sat)|
-|[ala-web-theme](https://github.com/AtlasOfLivingAustralia/ala-web-theme)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-web-theme.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-web-theme)|
-|[ala-wp-theme-2011](https://github.com/AtlasOfLivingAustralia/ala-wp-theme-2011)|N/A|
-|[ALA4R](https://github.com/AtlasOfLivingAustralia/ALA4R)|N/A|
-|[alerts](https://github.com/AtlasOfLivingAustralia/alerts)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/alerts.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/alerts)|
-|[amrin-hub](https://github.com/AtlasOfLivingAustralia/amrin-hub)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/amrin-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/amrin-hub)|
-|[analysis-service](https://github.com/AtlasOfLivingAustralia/analysis-service)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/analysis-service.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/analysis-service)|
-|[apikey](https://github.com/AtlasOfLivingAustralia/apikey)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/apikey.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/apikey)|
-|[appd-hub](https://github.com/AtlasOfLivingAustralia/appd-hub)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/appd-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/appd-hub)|
-|[asbp-hub](https://github.com/AtlasOfLivingAustralia/asbp-hub)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/asbp-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/asbp-hub)|
-|[atlasoflivingaustralia.github.io](https://github.com/AtlasOfLivingAustralia/atlasoflivingaustralia.github.io)|N/A|
-|[avh-hub](https://github.com/AtlasOfLivingAustralia/avh-hub)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/avh-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/avh-hub)|
-|[bhl-demo-app](https://github.com/AtlasOfLivingAustralia/bhl-demo-app)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/bhl-demo-app.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/bhl-demo-app)|
-|[bhl-ftindex-manage](https://github.com/AtlasOfLivingAustralia/bhl-ftindex-manage)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/bhl-ftindex-manage.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/bhl-ftindex-manage)|
-|[bhl-ftindexer](https://github.com/AtlasOfLivingAustralia/bhl-ftindexer)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/bhl-ftindexer.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/bhl-ftindexer)|
-|[bhl-solr-plugin](https://github.com/AtlasOfLivingAustralia/bhl-solr-plugin)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/bhl-solr-plugin.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/bhl-solr-plugin)|
-|[bie-profile](https://github.com/AtlasOfLivingAustralia/bie-profile)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/bie-profile.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/bie-profile)|
-|[bie-service](https://github.com/AtlasOfLivingAustralia/bie-service)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/bie-service.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/bie-service)|
-|[bie-webapp2](https://github.com/AtlasOfLivingAustralia/bie-webapp2)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/bie-webapp2.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/bie-webapp2)|
-|[biocache-hubs](https://github.com/AtlasOfLivingAustralia/biocache-hubs)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/biocache-hubs.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/biocache-hubs)|
-|[biocache-jms](https://github.com/AtlasOfLivingAustralia/biocache-jms)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/biocache-jms.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/biocache-jms)|
-|[biocache-service](https://github.com/AtlasOfLivingAustralia/biocache-service)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/biocache-service.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/biocache-service)|
-|[biocache-store](https://github.com/AtlasOfLivingAustralia/biocache-store)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/biocache-store.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/biocache-store)|
-|[collectory](https://github.com/AtlasOfLivingAustralia/collectory)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/collectory.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/collectory)|
-|[dashboard](https://github.com/AtlasOfLivingAustralia/dashboard)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/dashboard.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/dashboard)|
-|[data-management](https://github.com/AtlasOfLivingAustralia/data-management)|N/A|
-|[documentation](https://github.com/AtlasOfLivingAustralia/documentation)|N/A|
-|[ecodata](https://github.com/AtlasOfLivingAustralia/ecodata)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ecodata.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ecodata)|
-|[expert](https://github.com/AtlasOfLivingAustralia/expert)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/expert.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/expert)|
-|[fieldcapture](https://github.com/AtlasOfLivingAustralia/fieldcapture)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/fieldcapture.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fieldcapture)|
-|[fieldcapture-hubs](https://github.com/AtlasOfLivingAustralia/fieldcapture-hubs)|N/A|
-|[fieldcapture-mobile](https://github.com/AtlasOfLivingAustralia/fieldcapture-mobile)|N/A|
-|[fielddata](https://github.com/AtlasOfLivingAustralia/fielddata)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/fielddata.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fielddata)|
-|[fielddata-android](https://github.com/AtlasOfLivingAustralia/fielddata-android)|N/A|
-|[fielddata-mobile](https://github.com/AtlasOfLivingAustralia/fielddata-mobile)|N/A|
-|[fielddata-proxy](https://github.com/AtlasOfLivingAustralia/fielddata-proxy)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/fielddata-proxy.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fielddata-proxy)|
-|[fieldguide](https://github.com/AtlasOfLivingAustralia/fieldguide)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/fieldguide.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fieldguide)|
-|[generic-hub](https://github.com/AtlasOfLivingAustralia/generic-hub)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/generic-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/generic-hub)|
-|[image-loader](https://github.com/AtlasOfLivingAustralia/image-loader)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/image-loader.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/image-loader)|
-|[image-service](https://github.com/AtlasOfLivingAustralia/image-service)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/image-service.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/image-service)|
-|[image-tiling-agent](https://github.com/AtlasOfLivingAustralia/image-tiling-agent)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/image-tiling-agent.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/image-tiling-agent)|
-|[image-utils](https://github.com/AtlasOfLivingAustralia/image-utils)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/image-utils.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/image-utils)|
-|[images-client-plugin](https://github.com/AtlasOfLivingAustralia/images-client-plugin)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/images-client-plugin.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/images-client-plugin)|
-|[layer-ingestion](https://github.com/AtlasOfLivingAustralia/layer-ingestion)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/layer-ingestion.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/layer-ingestion)|
-|[layers-service](https://github.com/AtlasOfLivingAustralia/layers-service)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/layers-service.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/layers-service)|
-|[layers-store](https://github.com/AtlasOfLivingAustralia/layers-store)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/layers-store.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/layers-store)|
-|[misc](https://github.com/AtlasOfLivingAustralia/misc)|N/A|
-|[obis-hub](https://github.com/AtlasOfLivingAustralia/obis-hub)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/obis-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/obis-hub)|
-|[opentree-install](https://github.com/AtlasOfLivingAustralia/opentree-install)|N/A|
-|[ozatlas](https://github.com/AtlasOfLivingAustralia/ozatlas)|N/A|
-|[ozatlas-android](https://github.com/AtlasOfLivingAustralia/ozatlas-android)|N/A|
-|[ozatlas-proxy](https://github.com/AtlasOfLivingAustralia/ozatlas-proxy)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ozatlas-proxy.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ozatlas-proxy)|
-|[ozcam-hub](https://github.com/AtlasOfLivingAustralia/ozcam-hub)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ozcam-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ozcam-hub)|
-|[phylolink](https://github.com/AtlasOfLivingAustralia/phylolink)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/phylolink.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/phylolink)|
-|[pigeonhole](https://github.com/AtlasOfLivingAustralia/pigeonhole)|N/A|
-|[regions](https://github.com/AtlasOfLivingAustralia/regions)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/regions.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/regions)|
-|[sandbox](https://github.com/AtlasOfLivingAustralia/sandbox)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/sandbox.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/sandbox)|
-|[sds-webapp2](https://github.com/AtlasOfLivingAustralia/sds-webapp2)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/sds-webapp2.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/sds-webapp2)|
-|[sds](https://github.com/AtlasOfLivingAustralia/sds)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/sds.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/sds)|
-|[sightings](https://github.com/AtlasOfLivingAustralia/sightings)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/sightings.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/sightings)|
-|[spatial-database](https://github.com/AtlasOfLivingAustralia/spatial-database)|N/A|
-|[spatial-logger](https://github.com/AtlasOfLivingAustralia/spatial-logger)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/spatial-logger.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/spatial-logger)|
-|[spatial-portal](https://github.com/AtlasOfLivingAustralia/spatial-portal)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/spatial-portal.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/spatial-portal)|
-|[specieslist-webapp](https://github.com/AtlasOfLivingAustralia/specieslist-webapp)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/specieslist-webapp.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/specieslist-webapp)|
-|[specimenbrowser](https://github.com/AtlasOfLivingAustralia/specimenbrowser)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/specimenbrowser.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/specimenbrowser)|
-|[taxon-overflow](https://github.com/AtlasOfLivingAustralia/taxon-overflow)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/taxon-overflow.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/taxon-overflow)|
-|[tepapa-hub](https://github.com/AtlasOfLivingAustralia/tepapa-hub)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/tepapa-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/tepapa-hub)|
-|[travis-build-configuration](https://github.com/AtlasOfLivingAustralia/travis-build-configuration)|N/A|
-|[tviewer](https://github.com/AtlasOfLivingAustralia/tviewer)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/tviewer.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/tviewer)|
-|[userdetails](https://github.com/AtlasOfLivingAustralia/userdetails)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/userdetails.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/userdetails)|
-|[volunteer-portal](https://github.com/AtlasOfLivingAustralia/volunteer-portal)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal)|
-|[webapi](https://github.com/AtlasOfLivingAustralia/webapi)|[![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/webapi.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/webapi)|
+##Step-by-step guide to add travis-ci.org support to a github repo/project 
+
+###Prerequirements
+* github token, hereafter refered to as `$GITHUB_TOKEN`
+* ruby/gem to install the travis client: `sudo gem install travis`
+
+###Adding travis-ci support
+**1.** git clone the project/repository you want to add travis support to, and cd into the clone  
+**2.** what type of project is it? Choose the appropriate `.travis.yml` template and copy it into the root of your git repo/project
+* [grails application .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-grails_template.yml)
+* [grails plugin .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-grails-plugin_template.yml)
+* [pom.xml/mvn project .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-java_template.yml)
+
+**3.** add the .travis.yml file to your git repo/project:
+```
+git add .travis.yml
+```
+**4.** Use the travis client to login:  
+```
+travis login --github-token $GITHUB_TOKEN
+```
+**5.** Enable travis-ci.org support for this github repo/project  
+```
+travis enable --org --no-interactive
+```
+**6.** OPTIONAL step, configure/customize some of the travis-ci.org settings:
+```
+travis settings builds_only_with_travis_yml --enable --no-interactive
+travis settings build_pull_requests --disable --no-interactive
+```
+**7.** ENCRYPT and add to `.travis.yml` **all** the encrypted env vars your git project uses/requires to build/test on travis-ci.org:
+```
+travis encrypt -a -p "TRAVIS_DEPLOY_USERNAME=deployment"
+travis encrypt -a -p "SOME_OTHER_VAR=some-other-value-here"
+...
+```
+**8.** Add your changes to git
+```
+git add .travis.yml
+```
+**9.** Add travis-ci build status badge to your README.md file, and add it to the git (`$repo` is your github repo/project name):
+```
+echo "### $repo   [![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/$repo.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/$repo)"
+
+git add README.md
+```
+**10.** for grails application and grails plugin projects you need to add the release/publisher plugin to your grails project settings:
+* for grails < 2.3 add `plugins.maven-publisher=0.8.1` to your `application.properties`, and `git add application.properties` 
+* for grails >=2.3 add `build ":release:3.0.1"` to your `grails-app/conf/BuildConfig.groovy`, and `git add grails-app/conf/BuildConfig.groovy`
+
+**11.** finally commit and push your changes to git/github
+```
+git commit -m "added travis-ci.org support"
+git push
+```
