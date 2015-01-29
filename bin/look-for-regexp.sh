@@ -10,6 +10,8 @@ fi
 
 GITHUB_USER_ORG=$1
 REGEXP=$2
+echo "REGEXP:$REGEXP"
+
 
 # args 2, 3, 4 ... N are repo names, so skip arg1 required/positional args to adjust $@
 shift 2
