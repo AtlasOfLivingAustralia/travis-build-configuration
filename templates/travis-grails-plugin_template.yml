@@ -8,6 +8,8 @@ branches:
   - master
 
 before_install:
+- export TZ=Australia/Canberra
+- date
 - rm -rf ~/.gvm
 - curl -s get.gvmtool.net > ~/install_gvm.sh
 - chmod 775 ~/install_gvm.sh
