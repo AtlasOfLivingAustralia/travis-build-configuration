@@ -35,8 +35,8 @@ travis settings build_pull_requests --disable --no-interactive
 ```
 **7.** ENCRYPT and add to `.travis.yml` **all** the encrypted env vars your git project uses/requires to build/test on travis-ci.org:
 ```
-travis encrypt -a -p "TRAVIS_DEPLOY_USERNAME=deployment"
-travis encrypt -a -p "SOME_OTHER_VAR=some-other-value-here"
+travis encrypt -a -p "TRAVIS_DEPLOY_USERNAME=<<MAVEN_REPO_USER_NAME>>"
+travis encrypt -a -p "TRAVIS_DEPLOY_PASSWORD=<<MAVEN_REPO_PASSWORD>>"
 ...
 ```
 **8.** Add your changes to git
@@ -45,7 +45,7 @@ git add .travis.yml
 ```
 **9.** Add travis-ci build status badge to your README.md file, and add it to the git (`$repo` is your github repo/project name):
 ```
-echo "### $repo   [![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/$repo.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/$repo)"
+echo "### $repo   [![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/$repo.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/$repo)" > README.md
 
 git add README.md
 ```
