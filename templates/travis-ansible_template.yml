@@ -1,0 +1,39 @@
+language: python
+
+python:
+  - "2.7"
+
+branches:
+  only:
+  - master
+
+before_install:
+# REPLACE THIS WITH YOUR ENCRYPTED KEY DETAILS, as geerated by the travis ruby client
+#  - openssl aes-256-cbc -K $encrypted_bc4ab20c2dda_key -iv $encrypted_bc4ab20c2dda_iv -in nci-key.pem.enc -out nci-key.pem -d
+#  - chmod 600 nci-key.pem
+
+install:
+  - pip install ansible
+
+script:
+# REPLACE THIS WITH YOUR ANSIBLE COMMAND
+#  - cd ansible && ansible-playbook -i inventories/biocache-test ala-demo.yml --private-key ../key.pem -u $ANSIBLE_TEST_USER -s
+
+addons:
+  ssh_known_hosts:
+# REPLACE THIS WITH YOUR REMOTE HOST IP ADDRESS; YOU CAN USE HOSTNAMES TOO, BUT THEY HAVE TO BE VISIBLE ON THE Internet.
+# - 203.101.226.44
+#
+# NOTE: this is required ONLY for the deployment part so ansible can use ssh without the
+#       need for human user interaction (obviously - because this is an automated process).
+#       If you for example want to use ansible to deploy into a vm, and then run some test
+#       against that vm (for example to do some REST API test-s with curl) you do NOT need
+#       a hostname here; but simply add something like:
+#          - sudo sh -c "echo \"203.101.226.44  testhostname\" >> /etc/hosts"
+#
+#       to before_script: or to script: anywhere BEFORE your REST API tests
+#
+
+env:
+  global:
+
