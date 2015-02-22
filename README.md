@@ -16,6 +16,7 @@ See the [bin/](https://github.com/AtlasOfLivingAustralia/travis-build-configurat
 * [grails plugin .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-grails-plugin_template.yml)
 * [pom.xml/mvn project .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-java_template.yml)
 * [ansible project .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-ansible_template.yml) and continue to [ansible travis-ci howto](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/tree/master/doc/ansible-playbook-from-travis.md)
+
 **3.** add the .travis.yml file to your git repo/project:
 ```
 git add .travis.yml
