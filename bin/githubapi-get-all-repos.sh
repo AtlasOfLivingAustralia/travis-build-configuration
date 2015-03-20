@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 if [ ${#@} -lt 2 ]; then
     echo "usage: ./githubapi-get-all-repos.sh [github username] [your github token] --no-forks"
