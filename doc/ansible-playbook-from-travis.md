@@ -110,4 +110,5 @@ env:
 **11.** git commit & push your additions to github and check travis-ci.org for the result of your changes
 ```BASH
 git commit -m "added travis-ci.org ansible support/test"
+git push
 ```
