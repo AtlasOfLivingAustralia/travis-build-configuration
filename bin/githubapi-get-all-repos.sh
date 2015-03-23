@@ -10,15 +10,14 @@ GITHUB_TOKEN=$2
 NO_FORKS=`if [ "$3" = "--no-forks" ]; then echo "1"; fi`
 
 temp=`basename $0`
-TMPFILE=`mktemp /tmp/${temp}.XXXXXX` || exit 1
-TMPFILE_REPOS=`mktemp /tmp/${temp}.XXXXXX` || exit 1
-TMPFILE_FORKS=`mktemp /tmp/${temp}.XXXXXX` || exit 1
-
-# TODO: option --no-forks, or even better use popt
+TMP_FILE_DIR=`mktemp -d /tmp/${temp}.XXXXXX` || exit 1
+TMPFILE=$TMP_FILE_DIR/result
+TMPFILE_REPOS=$TMP_FILE_DIR/repos
+TMPFILE_FORKS=$TMP_FILE_DIR/forks
 
 function rest_call {
     curl -s -i $1 -H "Authorization: token $GITHUB_TOKEN" > $TMPFILE
-    cat $TMPFILE | grep '"name":' >> $TMPFILE_REPOS;
+    cat $TMPFILE | grep '"name":' | sed -e 's/^ *"name": "//g' -e 's/",$//g' >> $TMPFILE_REPOS;
     cat $TMPFILE | grep '"fork":' >> $TMPFILE_FORKS;
 }
 
@@ -38,15 +37,18 @@ else
     done
 fi
 
-cat $TMPFILE_REPOS | sed -e 's/^ *"name": "//g' -e 's/",$//g' > $TMPFILE
-
 if [ "$NO_FORKS" = "1" ]; then
-    all_repos=(`cat $TMPFILE`)
+    all_repos=(`cat $TMPFILE_REPOS`)
+    rm -rf $TMPFILE
 
     # for each repo that is NOT a fork, extract/dump repo name
     for index in `grep -n "false" $TMPFILE_FORKS | sed -e 's/:.*$//g'`; do
-	echo "${all_repos[$index - 1]}"
+	echo "${all_repos[$index - 1]}" >> $TMPFILE
     done
-else
+
     cat $TMPFILE
+else
+    cat $TMPFILE_REPOS
 fi
+
+rm -rf $TMP_FILE_DIR
