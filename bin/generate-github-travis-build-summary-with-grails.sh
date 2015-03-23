@@ -1,7 +1,5 @@
 #!/bin/bash
 
-TIMESTAMP_START=`TZ='Australia/Canberra' date "+%Y-%m-%d %H:%M:%S"`
-
 # we need at least two args: gihub user/organization AND at least one repo name
 if [ -z "$1" ] || [ -z "$2" ]; then
     echo "usage: $0 [github user/organization] repo0 repo1 repo2 ... repoN"
@@ -20,9 +18,6 @@ SUMMARY=`mktemp /tmp/${temp}.XXXXXX` || exit 1
 MAVEN_REPO_URL='http://nexus.ala.org.au/content/repositories'
 
 # create .md table header
-echo "\`generated on:\` **$TIMESTAMP_START**  " >> $SUMMARY
-echo " @`hostname`" >> $SUMMARY
-echo "" >> $SUMMARY
 echo "|repo|version|travis build status|grails|" >> $SUMMARY
 echo "|:---|:------|:------------------|:-----|" >> $SUMMARY
 
