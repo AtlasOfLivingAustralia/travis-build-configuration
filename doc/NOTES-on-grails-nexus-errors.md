@@ -54,7 +54,7 @@ NOTE: maven release plugin with grails **2.4** and higher (**>=2.4**) accepts an
 HTTP error 500 (Internal Server Error) reported when sonatype nexus run out of disk space
 
 ####example-03
-HTTP 400 in response to attempt to deploy/upload into the maven repo an already existing **release** version of an artefact (war/jar/zip, etc.)
+HTTP 400 in response to attempt to deploy/upload into the maven repo an already existing **release** version of an artefact (war/jar/zip, etc.) In this example the build is trying to upload (overwrite) existing war file `phylolink-0.2.war`
 ```
 | Compiling 5 GSP files for package [alaAuth]..
 | Building WAR file
