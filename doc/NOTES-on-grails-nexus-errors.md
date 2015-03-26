@@ -52,3 +52,31 @@ NOTE: maven release plugin with grails **2.4** and higher (**>=2.4**) accepts an
 
 ####example-02
 HTTP error 500 (Internal Server Error) reported when sonatype nexus run out of disk space
+
+####example-03
+HTTP 400 in response to attempt to deploy/upload into the maven repo an already existing **release** version of an artefact (war/jar/zip, etc.)
+```
+| Compiling 5 GSP files for package [alaAuth]..
+| Building WAR file
+| Building WAR file.
+| Building WAR file..
+| Building WAR file...
+| Building WAR file....
+| Building WAR file.....
+| Done creating WAR target/phylolink-0.2.war
+| Generating POM file...
+| Generating POM file....
+| Generating POM file.....
+| Downloading: commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+| Downloading: commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar
+| POM generated: /home/travis/build/AtlasOfLivingAustralia/phylolink/target/pom.xml
+| Using configured username and password from grails.project.repos.ala-repo-release
+| Using configured username and password from grails.project.repos.ala-repo-release.
+| Using configured username and password from grails.project.repos.ala-repo-release..
+| Using configured username and password from grails.project.repos.ala-repo-release...
+| Using configured username and password from grails.project.repos.ala-repo-release....
+| Error Error deploying artifact: Error deploying artifact 'au.org.ala:phylolink:war': Error deploying artifact: Failed to transfer file: http://nexus.ala.org.au/content/repositories/releases/au/org/ala/phylolink/0.2/phylolink-0.2.war. Return code is: 400
+| Error Have you specified a configured repository to deploy to (--repository argument) or specified distributionManagement in your POM?
+The command "grails clean && grails refresh-dependencies --non-interactive && grails prod war --non-interactive && grails prod maven-deploy --repository=$MAVEN_REPO --non-interactive" exited with 1.
+Done. Your build exited with 1.
+```
