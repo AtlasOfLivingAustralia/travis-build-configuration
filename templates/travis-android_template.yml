@@ -1,0 +1,20 @@
+language: android
+
+android:
+  components:
+# this is only an example, put here your own project's build tools dependcies   
+    - build-tools-20.0.0
+    - android-20
+    - extra
+    - addon-google_apis-google-17
+
+# 1. If your project has build.gradle file in the repository root, gradle will
+#    be used to build it; by default (if you do not provide script: section)
+#    travis-ci will use:
+#       gradle build connectedCheck
+#
+# 2. If your project also includes the gradlew wrapper script in the repo root,
+#    travis will use the default command:
+#       ./gradlew build connectedCheck
+#
+# OR create/add a script: section with your custom build command
