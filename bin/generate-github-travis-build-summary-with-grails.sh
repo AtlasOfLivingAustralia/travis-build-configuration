@@ -94,6 +94,7 @@ do
 
 	ARTIFACT_VERSION_NUMBER=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/pom.xml | sed -n "${start_from_line},$ p" |  grep -m 1 '^\s*<version>' | sed -e 's/^.*<version>//g' -e 's/<\/.*$//g' | tr -d "\r"`
 
+	ARTIFACT_GROUP_ID=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/pom.xml | sed -n "${start_from_line},$ p" |  grep -m 1 '^\s*<groupId>' | sed -e 's/^.*<groupId>//g' -e 's/<\/.*$//g' | tr -d "\r" | sed -e 's/\./\//g'`
     fi
 
     ARTIFACT_VERSION_NUMBER_PATH="N/A"
