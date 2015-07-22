@@ -1,0 +1,22 @@
+language: groovy
+
+sudo: false
+
+jdk:
+  - oraclejdk8
+
+branches:
+  only:
+    - master
+
+before_install:
+  - chmod +x gradlew
+
+# "default/automatic" install: section
+# because travis-ci detected there is a build.gradle file in the root of
+# this repo, it will automatically exectute:
+# ./gradlew assemble
+# ./gradlew check
+
+env:
+  global:
