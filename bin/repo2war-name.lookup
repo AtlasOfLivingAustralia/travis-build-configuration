@@ -5,6 +5,7 @@ analysis-service           :ala-spatial
 bhl-demo-app               :bhl-ftindex-demo
 bhl-ftindexer      groupId :bhl-indexer
 collectory-plugin          :collectory
+fieldcapture-test-plugin   :fieldcapture-test
 image-loader       groupid :image-uploader
 image-service              :ala-images
 spatial-logger             :actions
