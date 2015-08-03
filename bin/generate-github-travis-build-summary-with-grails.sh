@@ -115,7 +115,7 @@ do
 	# TMP HACK-AROUND: try to lookup the artifact name in a (repository to war name) lookup
 	#                  table, if a match is found use it instead of the "default" repo name
 	if [ -e "repo2war-name.lookup" ]; then
-	    lookup_name=`grep '^$repo\s' repo2war-name.lookup | sed -e "s/$repo.*://g"`
+	    lookup_name=`grep "^$repo " repo2war-name.lookup | sed -e "s/$repo.*://g"`
 	    if [ "$lookup_name" != "" ]; then
 		ARTIFACT_ID=$lookup_name
 	    fi
