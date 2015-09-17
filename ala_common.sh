@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export TZ=Australia/Canberra
+date
+
 # all ALA projects should use/source this value from this script
 export ALA_MAVEN_REPO_URL="http://nexus.ala.org.au/content/repositories"
 
