@@ -31,10 +31,24 @@ function ala_travis_grails_setup_env {
 
     mkdir -p ~/.grails
     wget -q -O ~/.grails/settings.groovy https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_settings_old.groovy
-    grep '^app\.version=' ./application.properties | grep -q "\-SNAPSHOT"
+
+    # check if this is a grails application OR a plugin
+    # - grails plugins are storing their version number in the WhateverGrailsPlugin.groovy file
+    # - grails applications in the application.properties file
+    local app_version
+    if [ -f ./*GrailsPlugin.groovy ]
+    then
+	app_version=`grep '^\s*def\s*version' *GrailsPlugin.groovy | sed -e 's/^.*= *"//g' | sed -e 's/".*$//g' | tr -d "\r"`
+    else
+	app_version=`grep '^app\.version=' ./application.properties`
+    fi
+
+    echo $app_version | grep -q "\-SNAPSHOT"
     if [ "$?" = "1" ]; then
 	MAVEN_REPO="ala-repo-release"
     fi
+
+    # TODO: if we got here and we still do not MAVEN_REPO set we have a problem, report an ERROR
 }
 
 function ala_travis_grails_build {
