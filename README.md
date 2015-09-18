@@ -12,12 +12,13 @@ See the [bin/](https://github.com/AtlasOfLivingAustralia/travis-build-configurat
 ###Adding travis-ci support
 **1.** git clone the project/repository you want to add travis support to, and cd into the clone  
 **2.** what type of project is it? Choose the appropriate `.travis.yml` template and copy it into the root of your git repo/project
-* [grails application .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-grails_template.yml)
-* [grails plugin .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-grails-plugin_template.yml)
+* [grails](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-grails-app-or-plugin_template.yml)
 * [pom.xml/mvn project .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-java_template.yml)
 * [ansible project .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-ansible_template.yml) and continue to [ansible travis-ci howto](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/tree/master/doc/ansible-playbook-from-travis.md)
 * [android project .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-android_template.yml)
-
+* **DON'T USE** These are here only for historic :-) reason the above grails template handles **BOTH** grails application **AND** grals plugin projects
+ * ~~[grails application .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-grails_template.yml)~~
+ * ~~[grails plugin .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-grails-plugin_template.yml)~~
 **3.** add the .travis.yml file to your git repo/project:
 ```
 git add .travis.yml
