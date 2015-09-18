@@ -16,7 +16,7 @@ export ALA_MAVEN_GROUP_ID="au.org.ala"
 # default to SNAPSHOT maven repo
 MAVEN_REPO="ala-repo-snapshot";
 
-function travis_grails_setup_env {
+function ala_travis_grails_setup_env {
     rm -rf ~/.sdkman
     curl -s get.gvmtool.net > ~/install_gvm.sh
     chmod 775 ~/install_gvm.sh
@@ -37,6 +37,6 @@ function travis_grails_setup_env {
     fi
 }
 
-function travis_grails_build {
+function ala_travis_grails_build {
     grails clean && grails refresh-dependencies --non-interactive && grails prod war --non-interactive && grails prod maven-deploy --repository=$MAVEN_REPO --non-interactive
 }
