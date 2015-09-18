@@ -52,5 +52,5 @@ function ala_travis_grails_setup_env {
 }
 
 function ala_travis_grails_build {
-    grails clean && grails refresh-dependencies --non-interactive && grails prod war --non-interactive && grails prod maven-deploy --repository=$MAVEN_REPO --non-interactive
+    grails clean && grails refresh-dependencies --non-interactive && grails prod maven-install --non-interactive && grails prod maven-deploy --repository=$MAVEN_REPO --non-interactive
 }
