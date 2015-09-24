@@ -19,6 +19,7 @@ See the [bin/](https://github.com/AtlasOfLivingAustralia/travis-build-configurat
 * **DON'T USE** These are here only for historic :-) reason the above grails template handles **BOTH** grails application **AND** grals plugin projects
  * ~~[grails application .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-grails_template.yml)~~
  * ~~[grails plugin .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-grails-plugin_template.yml)~~
+
 **3.** add the .travis.yml file to your git repo/project:
 ```
 git add .travis.yml
