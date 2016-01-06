@@ -10,7 +10,7 @@ export ALA_MAVEN_REPO_URL="http://nexus.ala.org.au/content/repositories"
 # maven will look for the "default" <id>remote-repository</id> in ~/.m2/settings.xml
 export ALA_MAVEN_REPO_ID="ala-repo"
 
-# deafult groupId for ALA projects
+# default groupId for ALA projects
 export ALA_MAVEN_GROUP_ID="au.org.ala"
 
 # default to SNAPSHOT maven repo
@@ -18,9 +18,7 @@ MAVEN_REPO="ala-repo-snapshot";
 
 function ala_travis_grails_setup_env {
     rm -rf ~/.sdkman
-    curl -s get.gvmtool.net > ~/install_gvm.sh
-    chmod 775 ~/install_gvm.sh
-    ~/install_gvm.sh
+    curl -s http://get.sdkman.io | bash
 
     echo "sdkman_auto_answer=true" > ~/.sdkman/etc/config
     source ~/.sdkman/bin/sdkman-init.sh
