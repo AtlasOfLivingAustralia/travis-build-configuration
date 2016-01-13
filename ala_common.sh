@@ -54,7 +54,7 @@ function ala_travis_grails_build {
 }
 
 function ala_travis_grails_test {
-    grails test-app
+    grails test-app --non-interactive
 }
 
 function ala_travis_grails_deploy {
