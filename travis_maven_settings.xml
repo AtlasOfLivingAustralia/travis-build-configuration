@@ -10,6 +10,16 @@
       <username>${env.TRAVIS_DEPLOY_USERNAME}</username>
       <password>${env.TRAVIS_DEPLOY_PASSWORD}</password>
     </server>
+    <server>
+      <id>ala-repo-release</id>
+      <username>${env.TRAVIS_DEPLOY_USERNAME}</username>
+      <password>${env.TRAVIS_DEPLOY_PASSWORD}</password>
+    </server>
+    <server>
+      <id>ala-repo-snapshot</id>
+      <username>${env.TRAVIS_DEPLOY_USERNAME}</username>
+      <password>${env.TRAVIS_DEPLOY_PASSWORD}</password>
+    </server>
 
   </servers>
 
