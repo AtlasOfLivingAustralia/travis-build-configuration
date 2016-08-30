@@ -42,6 +42,8 @@ travis settings build_pull_requests --disable --no-interactive
 travis encrypt -a -p "TRAVIS_DEPLOY_USERNAME=<<MAVEN_REPO_USER_NAME>>"
 travis encrypt -a -p "TRAVIS_DEPLOY_PASSWORD=<<MAVEN_REPO_PASSWORD>>"
 ```
+note: <<MAVEN_REPO_USER_NAME>> &  <<MAVEN_REPO_PASSWORD>> are placeholders. Replace them with username and password of nexus repository.
+
 **8.** Add your changes to git
 ```
 git add .travis.yml
