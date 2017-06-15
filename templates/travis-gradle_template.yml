@@ -3,7 +3,7 @@ language: groovy
 sudo: false
 
 jdk:
-  - oraclejdk8
+  - oraclejdk7
 
 branches:
   only:
@@ -21,12 +21,6 @@ cache:
 
 before_install:
   - chmod +x gradlew
-
-# "default/automatic" install: section
-# because travis-ci detected there is a build.gradle file in the root of
-# this repo, it will automatically exectute:
-# ./gradlew assemble
-# ./gradlew check
 
 after_success:
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && travis_retry ./gradlew publish'
