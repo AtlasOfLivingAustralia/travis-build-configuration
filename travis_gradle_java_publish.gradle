@@ -1,5 +1,16 @@
+// To use, add the following to build.gradle:
+// apply from: 'https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_gradle_java_publish.gradle'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
+
+repositories {
+  mavenLocal()
+  maven {
+        url "https://nexus.ala.org.au/nexus/content/groups/public"
+  }
+  jcenter()
+  mavenCentral()
+}
 
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
