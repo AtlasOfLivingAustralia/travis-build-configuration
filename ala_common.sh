@@ -16,17 +16,7 @@ export ALA_MAVEN_GROUP_ID="au.org.ala"
 # default to SNAPSHOT maven repo
 MAVEN_REPO="ala-repo-snapshot";
 
-function ala_travis_grails_setup_env {
-    rm -rf ~/.sdkman
-    curl -s http://get.sdkman.io | bash
-
-    echo "sdkman_auto_answer=true" > ~/.sdkman/etc/config
-    source ~/.sdkman/bin/sdkman-init.sh
-
-    local grails_version
-    grails_version=`grep '^app\.grails\.version=' ./application.properties | sed -e 's/^app\.grails\.version=//g'`
-    sdk install grails $grails_version || true
-
+function ala_grails_repo_setup {
     mkdir -p ~/.grails
     wget -q -O ~/.grails/settings.groovy https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_settings_old.groovy
 
@@ -49,12 +39,26 @@ function ala_travis_grails_setup_env {
     # TODO: if we got here and we still do not MAVEN_REPO set we have a problem, report an ERROR
 }
 
+function ala_travis_grails_setup_env {
+    rm -rf ~/.sdkman
+    curl -s http://get.sdkman.io | bash
+
+    echo "sdkman_auto_answer=true" > ~/.sdkman/etc/config
+    source ~/.sdkman/bin/sdkman-init.sh
+
+    local grails_version
+    grails_version=`grep '^app\.grails\.version=' ./application.properties | sed -e 's/^app\.grails\.version=//g'`
+    sdk install grails $grails_version || true
+
+    ala_grails_repo_setup
+}
+
 function ala_travis_grails_build {
     grails clean && grails refresh-dependencies --non-interactive && grails prod maven-install --non-interactive && travis_retry grails prod maven-deploy --repository=$MAVEN_REPO --non-interactive
 }
 
 function ala_travis_grails_test {
-    grails test-app --non-interactive
+    grails refresh-dependencies --non-interactive && grails test-app --non-interactive
 }
 
 function ala_travis_grails_deploy {
