@@ -1,6 +1,8 @@
 // To use, add the following to build.gradle:
 // apply from: 'https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_publish.gradle'
 
+apply plugin:"maven-publish"
+
 publishing {
     repositories {
         maven {
