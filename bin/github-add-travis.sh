@@ -113,12 +113,12 @@ do
 		echo "                <repository>"                                                                           >> pom.xml
 		echo "                        <id>ala-repo</id>"                                                              >> pom.xml
 		echo "                        <name>Internal Releases</name>"                                                 >> pom.xml
-		echo "                        <url>http://ala-wonder.it.csiro.au/nexus/content/repositories/releases/</url>"  >> pom.xml
+		echo "                        <url>https://nexus.ala.org.au/content/repositories/releases/</url>"  >> pom.xml
 		echo "                </repository>"                                                                          >> pom.xml
 		echo "                <snapshotRepository>"                                                                   >> pom.xml
 		echo "                        <id>ala-repo</id>"                                                              >> pom.xml
 		echo "                        <name>Internal Releases</name>"                                                 >> pom.xml
-		echo "                        <url>http://ala-wonder.it.csiro.au/nexus/content/repositories/snapshots/</url>" >> pom.xml
+		echo "                        <url>https://nexus.ala.org.au/content/repositories/snapshots/</url>" >> pom.xml
 		echo "                </snapshotRepository>"                                                                  >> pom.xml
 		echo "        </distributionManagement>"                                                                      >> pom.xml
 		echo "</project>"                                                                                             >> pom.xml

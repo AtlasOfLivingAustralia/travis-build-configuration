@@ -4,7 +4,7 @@ export TZ=Australia/Canberra
 date
 
 # all ALA projects should use/source this value from this script
-export ALA_MAVEN_REPO_URL="http://nexus.ala.org.au/content/repositories"
+export ALA_MAVEN_REPO_URL="https://nexus.ala.org.au/content/repositories"
 
 # we do not need this, if a custom <id> is NOT set (NOT used), and therefore NOT passed to maven deploy:deploy-file mojo in repositoryID
 # maven will look for the "default" <id>remote-repository</id> in ~/.m2/settings.xml
@@ -50,7 +50,7 @@ function ala_travis_grails_repo_setup {
 
 function ala_travis_grails_setup_env {
 	rm -rf ~/.sdkman
-	curl -s http://get.sdkman.io | bash
+	curl -s https://get.sdkman.io | bash
 
 	echo "sdkman_auto_answer=true" > ~/.sdkman/etc/config
 	source ~/.sdkman/bin/sdkman-init.sh

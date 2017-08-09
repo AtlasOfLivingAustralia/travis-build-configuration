@@ -15,7 +15,7 @@ GITHUB_REPOS="$@"
 temp=`basename $0`
 SUMMARY=`mktemp /tmp/${temp}.XXXXXX` || exit 1
 
-MAVEN_REPO_URL='http://nexus.ala.org.au/content/repositories'
+MAVEN_REPO_URL='https://nexus.ala.org.au/content/repositories'
 
 # create .md table header
 echo "|repo|version|travis build status|grails|" >> $SUMMARY

@@ -1,7 +1,7 @@
 These are some helper scripts to automate/speedup some of the tedious and error prone tasks.
 
 ####githubapi-get-all-repos.sh
-This BASH script uses [cURL](http://curl.haxx.se) to call the [github REST API](https://developer.github.com/v3) in order to retrieve all github repository names for a given github user or github organization. I wrote this script originally only as a note/demo about how to correctly paginate github REST API results (return values).
+This BASH script uses [cURL](https://curl.haxx.se) to call the [github REST API](https://developer.github.com/v3) in order to retrieve all github repository names for a given github user or github organization. I wrote this script originally only as a note/demo about how to correctly paginate github REST API results (return values).
 I have been using this script a lot, mostly to get fast an upto-date list of all of our https://github.com/AtlasOfLivingAustralia github projects, when I want/need to run some `for each` type of scenario. 
 
 Example usage:
@@ -75,7 +75,7 @@ the variables file (the 3rd argument `[env var file]`) format is as follows:
 ```
 VARIABLE_ONE_NAME=42
 VARIABLE_TWO_NAME=someStringHere
-VARIABLE_THREE=http://ala-wonder.it.csiro.au/nexus/content/repositories/releases
+VARIABLE_THREE=https://nexus.ala.org.au/content/repositories/releases
 ...
 ```
 
