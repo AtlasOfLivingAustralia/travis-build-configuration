@@ -30,6 +30,16 @@ publishing {
                 }
             }
             from components.web
+            if (bootRepackage && bootRepackage.enabled && bootRepackage.classifier) {
+                def repackagedFile = file("$libsDir/$project.name-$project.version-${bootRepackage.classifier}.jar")
+                if (repackagedFile.exists()) {
+                    artifact(repackagedFile) {
+                        classifier bootRepackage.classifier
+                    }
+                } else {
+                    logger.quiet("Spring Boot repackage with classifier specified but file is not present!")
+                }
+            }
         }
     }
 }
