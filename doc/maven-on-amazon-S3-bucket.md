@@ -1,7 +1,7 @@
-###deploying into maven repository inside amazon S3 bucket
+### deploying into maven repository inside amazon S3 bucket
 (in 64 easy steps :-)
 
-####1. amazon S3 bucket setup
+#### 1. amazon S3 bucket setup
 1. log into amazon S3 management console
 2. create a new S3 bucket for the maven repo (in my example i created bucket named `mbohun-maven`)
 3. click onto the newly created S3 bucket and then click the `Properties`
@@ -36,7 +36,7 @@ example amazon S3 bucket policy:
 }
 ```
 
-####2. maven setup
+#### 2. maven setup
 1. add [AWS Maven Vagon](https://github.com/spring-projects/aws-maven) to your `pom.xml` at XPath `/project/build/extensions`
 2. add the amazon S3 bucket you created to your `pom.xml` `<distributionManagement>`
 
