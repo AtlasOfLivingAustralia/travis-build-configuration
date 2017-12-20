@@ -1,4 +1,4 @@
-##MOST RECENT UPDATE:
+## MOST RECENT UPDATE:
 the following grails projects do **NOT** use grails maven publisher/release plugin, but use maven directly in order to deploy the build artifact into the maven repository:
 - bie-webapp2
 - fielddata
@@ -7,7 +7,7 @@ the following grails projects do **NOT** use grails maven publisher/release plug
 
 ---
 
-##Intro
+## Intro
 The [ALA](https://github.com/AtlasOfLivingAustralia) applications/components can be divided into 3 diff groups/types according to the build system they use:
 
 * `jenkins-mvn`/`maven` - maven project, build with maven, deployed into a maven repo using hudons/jenkins maven plugin
@@ -38,10 +38,10 @@ The [ALA](https://github.com/AtlasOfLivingAustralia) applications/components can
 |                   |tepapa-hub          |                 |
 NOTE: :warning: uses grails < 2.1 (as in no maven support before grails 2.1)
 
-##What needs to be done?
+## What needs to be done?
 In order to add support for [travis-ci.org](http://travis-ci.org) we need to adjust the projects/component as follows:
 
-###common steps
+### common steps
 This has to be done **for each** ALA project we want to add travis-ci.org support to. The order of these steps is **important** (as in you won't be able to encrypt/generate usernames/passwords for `atlasoflivingaustralia/alerts` **before** you enabled the project `atlasoflivingaustralia/alerts` in travis-ci.org)
 
 1. log into [travis-ci.org](http://travis-ci.org) with your github (`atlasoflivingaustralia` admin/owner) profile, and enable the project/component you want add travis support for, for example `atlasoflivingaustralia/alerts`
@@ -62,7 +62,7 @@ Please add the following to your .travis.yml file:
 add the encrypted strings to your `.travis.yml` file env: section as described bellow.
 The rest of these steps is specific, depending on what type of project (jenkins-mvn, grails-mvn, jenkins-scp).
 
-###jenkins-mvn/maven
+### jenkins-mvn/maven
 These projects/components are "ready to go". All that needs to be done, is the basic/standard support for travis:
 
 1. add/commit/push `travis-maven-settings.xml` file (same file format and purpose like `~/.m2/settings.xml`) TODO: OR wget from a fileserver 
@@ -73,7 +73,7 @@ These projects/components are "ready to go". All that needs to be done, is the b
 * https://github.com/mbohun/ala-cas
 * https://github.com/mbohun/ala-cas-client
 
-###grails-mvn
+### grails-mvn
 These projects are "ready to go".  All that needs to be done, is the basic/standard support for travis:
 
 1. take the "generic" grails `.travis` file (TODO: agree with Dave which is the best template/approach to use)
@@ -90,7 +90,7 @@ These projects are "ready to go".  All that needs to be done, is the basic/stand
 * https://github.com/mbohun/ala-downloads
 * https://github.com/mbohun/alerts
 
-###jenkins-scp
+### jenkins-scp
 These projects needs to be 'mavenized' first in order to become the same as `grails-mvn`. grails supports maven since grails version `2.1`.
 
 1. add [grail release plugin](http://grails.org/plugin/release) to `BuildConfig.groovy`
@@ -100,7 +100,7 @@ These projects needs to be 'mavenized' first in order to become the same as `gra
 * https://github.com/mbohun/dashboard
 * https://github.com/mbohun/volunteer-portal
 
-##Summary table
+## Summary table
 |module                                                                              |build sys    |jenkins build targets                                          |deployment   |
 |----------------------------------------------------------------------------------- |------------ |-------------------------------------------------------------- |------------ |
 |[ala-cas](https://github.com/AtlasOfLivingAustralia/ala-cas)                        |Maven 3.2.1  |`clean install -DskipTests=true -e`                            |`jenkins-mvn`|
