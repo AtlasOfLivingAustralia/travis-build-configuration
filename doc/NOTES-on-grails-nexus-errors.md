@@ -1,9 +1,9 @@
-##Beware of grails maven publisher/release plugin misleading error messages
+## Beware of grails maven publisher/release plugin misleading error messages
 Basically the real error/problem/cause (examples of real errors are something like: wrong password or username, an attempt to redeploy into a repository that is configured with redeploy=false, etc) is completely hidden behind layers and layers of crap...
 
-###Examples
+### Examples
 
-####example 00
+#### example 00
 ```
 bash-3.2$ grails prod maven-deploy --repository=nectar-nexus-repo-test
  ...
@@ -17,7 +17,7 @@ bash-3.2$ grails prod maven-deploy --repository=nectar-nexus-repo-test
 * reported error: Error deploying artifact ... HTTP return code 400
 * real problem: an attempt to deploy a SNAPSHOT into a release repo or vice versa
 
-####example 01
+#### example 01
 ```
 | Done creating WAR target/dashboard-0.2-SNAPSHOT.war
 POM generated: /Users/hor22n/src/dashboard_mbohun.git/target/pom.xml
@@ -50,10 +50,10 @@ grails.project.repos.'nectar-nexus-repo-release'.password = System.getenv("TRAVI
 ```
 NOTE: maven release plugin with grails **2.4** and higher (**>=2.4**) accepts and works with **BOTH** (old **AND** new) `~/.grails/settings.groovy` file formats.
 
-####example-02
+#### example-02
 HTTP error 500 (Internal Server Error) reported when sonatype nexus run out of disk space
 
-####example-03
+#### example-03
 HTTP 400 in response to attempt to deploy/upload into the maven repo an already existing **release** version of an artefact (war/jar/zip, etc.) In this example the build is trying to upload (overwrite) existing war file `phylolink-0.2.war`
 ```
 | Compiling 5 GSP files for package [alaAuth]..
