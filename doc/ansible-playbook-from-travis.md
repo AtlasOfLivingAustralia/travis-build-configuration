@@ -1,4 +1,4 @@
-###problem
+### problem
 often we modify some ansible script-s or variables, and some might get not checked in (for example because an invetory file contains some sensitive information like passords, etc), or we add/modify a variable for one playbook, and unintentionally break some other script/playbook; example: 
 ```
 bash-3.2$ ansible-playbook -i inventories/nci-biocache-test ala-demo.yml -u hor22n --ask-sudo-pass -s
@@ -34,7 +34,7 @@ PLAY RECAP ********************************************************************
 nci-biocache-test          : ok=105  changed=18   unreachable=1    failed=0 
 ```
 
-###solution
+### solution
 to avoid that type of problems, resp. to identify the problem-s as soon as possible one can use [travis-ci.org](travis-ci.org) to automatically test the ansible scripts. here is a step by step example/howto add [travis-ci.org](travis-ci.org) test/support to your ansible-playbooks:
 
 **1.** clone the github repo with ansible scripts you want to add travis support to, for example:
