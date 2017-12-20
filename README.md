@@ -3,13 +3,13 @@ This repo contains all the information, configuration, and scripts required/used
 See the [doc/](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/tree/master/doc) subdir for information.  
 See the [bin/](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/tree/master/bin) subdir for helper scripts and even more information.
 
-##Step-by-step guide to add travis-ci.org support to a github repo/project 
+## Step-by-step guide to add travis-ci.org support to a github repo/project 
 
-###Prerequirements
+### Prerequirements
 * github token, hereafter refered to as `$GITHUB_TOKEN`
 * ruby/gem to install the travis client: `sudo gem install travis`
 
-###Adding travis-ci support
+### Adding travis-ci support
 **1.** git clone the project/repository you want to add travis support to, and cd into the clone  
 **2.** what type of project is it? Choose the appropriate `.travis.yml` template and copy it into the root of your git repo/project
 * [grails application or plugin .travis.yml template](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/blob/master/templates/travis-grails-app-or-plugin_template.yml)
