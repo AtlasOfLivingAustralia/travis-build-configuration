@@ -60,6 +60,9 @@ do
     # use curl to check if the repo does have an application.properties file
     pom_xml=`curl -s -o /dev/null -w "%{http_code}" https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/pom.xml`
 
+    # use curl to check if the repo does have a build.gradle file
+    build_gradle=`curl -s -o /dev/null -w "%{http_code}" https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/build.gradle`
+
     if [ "$application_properties" -eq "200" ]; then
 	GRAILSVERSION=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/application.properties | grep '^\s*app.grails.version' | sed -e 's/^\s*app\.grails\.version=//g' | tr -d "\r"`
 
@@ -95,6 +98,20 @@ do
 	ARTIFACT_VERSION_NUMBER=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/pom.xml | sed -n "${start_from_line},$ p" |  grep -m 1 '^\s*<version>' | sed -e 's/^.*<version>//g' -e 's/<\/.*$//g' | tr -d "\r"`
 
 	ARTIFACT_GROUP_ID=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/pom.xml | sed -n "${start_from_line},$ p" |  grep -m 1 '^\s*<groupId>' | sed -e 's/^.*<groupId>//g' -e 's/<\/.*$//g' | tr -d "\r" | sed -e 's/\./\//g'`
+
+    elif [ "$build_gradle" -eq "200" ]; then
+	# TODO: this is an ugly hack ATOP an older ugly hack (right above) to add support for grails-3
+	GRAILSVERSION=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/gradle.properties | grep '^grailsVersion\s*=\s*[0-9]' | sed -e 's/#.*$//g' -e 's/^.*=//g' | tr -d '[:space:]'`
+	ARTIFACT_VERSION_NUMBER=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/build.gradle | grep '^version ' | sed -e 's/^version//g' -e 's/"//g' -e "s/'//g" | tr -d '[:space:]'`
+	ARTIFACT_GROUP=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/build.gradle | grep '^group ' | sed -e 's/^group//g' -e 's/"//g' -e "s/'//g" | tr -d "[:space:]"`
+	# in grails-3 app-s and plugin-s the name is in settings.gradle
+	GRAILS_APP_NAME=`curl -s https://raw.githubusercontent.com/$GITHUB_USER_ORG/$repo/master/settings.gradle | grep '^rootProject.name\s*=\s*' | sed -e 's/#.*$//g' -e 's/^.*=//g' -e "s/'//g" | tr -d '[:space:]'`
+
+	# check if this is a grails plugin
+	if [ "$ARTIFACT_GROUP" == "org.grails.plugins" ]; then
+	    ARTIFACT_GROUP_ID="org/grails/plugins"
+	fi
+
     fi
 
     ARTIFACT_VERSION_NUMBER_PATH="N/A"
