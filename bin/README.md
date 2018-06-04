@@ -4,6 +4,8 @@ These are some helper scripts to automate/speedup some of the tedious and error 
 - [jq](https://stedolan.github.io/jq)
 - xmllint is a part of `libxml2`, `libxml2-tools`; use `sudo yum install libxml2-tools` on RedHat, Fedora, CentOS, or `sudo apt install libxml2-utils` on ubuntu
 
+**Note:** jq is used to process/parse the JSON results/payloads returned by GitHub REST API; xmllint is used to parse info out of maven pom.xml files.
+
 ### IMPORTANT NOTE about GitHub API token:  
 Some of these scripts require Github API token:
 - The GitHub API uses **[rate limit](https://developer.github.com/v3/rate_limit/)** to limit/restrict the number of unauthenticated calls
