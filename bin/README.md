@@ -1,6 +1,10 @@
 These are some helper scripts to automate/speedup some of the tedious and error prone tasks.
 
-**IMPORTANT NOTE about GitHub API token:**  
+### PREREQUIREMENTS:  
+- [jq](https://stedolan.github.io/jq)
+- xmllint is a part of libxml2, libxml2-tools
+
+### IMPORTANT NOTE about GitHub API token:  
 Some of these scripts require Github API token:
 - The GitHub API uses **[rate limit](https://developer.github.com/v3/rate_limit/)** to limit/restrict the number of unauthenticated calls
 - The same Github API token is used/required to `git commit` code changes from some scripts
