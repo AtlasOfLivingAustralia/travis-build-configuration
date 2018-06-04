@@ -74,7 +74,7 @@ usage: ./github-add-travis.sh [github-token] [github username/organization] [env
 the variables file (the 3rd argument `[env var file]`) format is as follows:
 ```
 VARIABLE_ONE_NAME=42
-VARIABLE_TWO_NAME=someStringHere
+VARIABLE_TWO_NAME=someStringHeregenerate-github-travis-build-summary-with-grails.sh
 VARIABLE_THREE=https://nexus.ala.org.au/content/repositories/releases
 ...
 ```
@@ -111,7 +111,7 @@ displayed as:
 |[fielddata](https://github.com/AtlasOfLivingAustralia/fielddata)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/fielddata.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/fielddata)|
 |[volunteer-portal](https://github.com/AtlasOfLivingAustralia/volunteer-portal)|[![BuildStatus](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/volunteer-portal)|
 
-####generate-github-travis-build-summary-with-grails.sh
+**[generate-github-travis-build-summary-with-grails.sh](generate-github-travis-build-summary-with-grails.sh)**  
 Same as `generate-github-travis-build-summary.sh` above, only this version adds extra columns to display the app (usually war, jar) version number, and the grails version.
 
 Example usage:
