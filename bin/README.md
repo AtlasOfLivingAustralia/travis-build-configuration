@@ -1,5 +1,24 @@
 These are some helper scripts to automate/speedup some of the tedious and error prone tasks.
 
+**IMPORTANT NOTE about GitHub API token:**  
+Some of these scripts require Github API token:
+- The GitHub API uses **[rate limit](https://developer.github.com/v3/rate_limit/)** to limit/restrict the number of unauthenticated calls
+- The same Github API token is used/required to `git commit` code changes from some scripts
+
+Follow these steps to create a GitHub token:  
+1. Login to GitHub
+2. Goto `Settings`
+3. In the menu on the left click on `Developer settings`
+4. In the menu on the left click on `Personal Access token`
+5. On the next screen click the `Generate new token` button
+6. On the next screen select the `gist` checkbox, enter some meaningful Token description and click the `Generate token` button
+7. On the next screen copy&paste and save the token
+
+Usage:  
+The BASH scripts in this dir refer/use to the token as `$GITHUB_TOKEN` or `$GIST_TOKEN`
+
+---
+
 **[githubapi-get-all-repos.sh](githubapi-get-all-repos.sh)**  
 This BASH script uses [cURL](https://curl.haxx.se) to call the [github REST API](https://developer.github.com/v3) in order to retrieve all github repository names for a given github user or github organization. I wrote this script originally only as a note/demo about how to correctly paginate github REST API results (return values).
 I have been using this script a lot, mostly to get fast an upto-date list of all of our https://github.com/AtlasOfLivingAustralia github projects, when I want/need to run some `for each` type of scenario. 
