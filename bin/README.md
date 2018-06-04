@@ -1,6 +1,6 @@
 These are some helper scripts to automate/speedup some of the tedious and error prone tasks.
 
-[githubapi-get-all-repos.sh](githubapi-get-all-repos.sh)
+**[githubapi-get-all-repos.sh](githubapi-get-all-repos.sh)**  
 This BASH script uses [cURL](https://curl.haxx.se) to call the [github REST API](https://developer.github.com/v3) in order to retrieve all github repository names for a given github user or github organization. I wrote this script originally only as a note/demo about how to correctly paginate github REST API results (return values).
 I have been using this script a lot, mostly to get fast an upto-date list of all of our https://github.com/AtlasOfLivingAustralia github projects, when I want/need to run some `for each` type of scenario. 
 
@@ -28,7 +28,7 @@ volunteer-portal
 webapi
 ```
 
-####github-add-travis.sh
+[github-add-travis.sh](github-add-travis.sh)  
 This BASH script automatically adds [travis-ci.org](https://travis-ci.org) support to a given list of github projects. Currently supported projects are:
 - grails projects (identified by `application.properties` in the project/repo root
 - java/maven projects (identified by `pom.xml` in the project/repo root)
@@ -79,7 +79,7 @@ VARIABLE_THREE=https://nexus.ala.org.au/content/repositories/releases
 ...
 ```
 
-####generate-github-travis-build-summary.sh
+**[generate-github-travis-build-summary.sh](generate-github-travis-build-summary.sh)  
 This BASH script generates a summary table (in github markdown format); each row is showing a repo/project name and the [travis-ci.org] build status badge for that project.
 
 Example usage:
