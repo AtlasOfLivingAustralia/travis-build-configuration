@@ -21,6 +21,15 @@ Follow these steps to create a GitHub token:
 Usage:  
 The BASH scripts in this dir refer/use to the token as `$GITHUB_TOKEN` or `$GIST_TOKEN`
 
+Example:
+```
+mbohun@linux-khr1:~/src/travis-build-configuration.git/bin> ./githubapi-get.sh \
+  $GIST_TOKEN \
+  /orgs/AtlasOfLivingAustralia/repos \
+  | jq '[ .[] | if .fork then empty else .name end ] | sort'
+```
+=> [result.json](https://gist.github.com/mbohun/e4c1d99850f5d2012507e13b8e7cd8fd#file-result-json)
+
 ---
 
 **[githubapi-get-all-repos.sh](githubapi-get-all-repos.sh)**  
