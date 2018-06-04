@@ -3,6 +3,8 @@ These are some helper scripts to automate/speedup some of the tedious and error 
 ### PREREQUIREMENTS:  
 - [jq](https://stedolan.github.io/jq)
 - xmllint is a part of libxml2, libxml2-tools
+  use `sudo yum install libxml2-tools` on RedHat, Fedora, CentOS
+  use `sudo apt install libxml2-utils` on bubuntu
 
 ### IMPORTANT NOTE about GitHub API token:  
 Some of these scripts require Github API token:
